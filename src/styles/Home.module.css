@@ -16,6 +16,10 @@
   @apply mx-10 text-xl font-bold text-purple-800 hover:text-pink-500;
 }
 
+.card_style {
+  @apply col-span-2 mx-2 max-h-60 overflow-hidden;
+}
+
 @media (prefers-color-scheme: dark) {
   .navbar_button {
     @apply text-purple-600 hover:text-pink-600;

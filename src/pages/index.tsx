@@ -3,9 +3,38 @@ import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
 import Navbar from '../components/navbar';
-import { Button, Card, CardActions, CardContent } from '@mui/material';
+import Project from '../components/project';
+import { useState } from 'react';
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Modal,
+} from '@mui/material';
 
 export default function Home() {
+  const title = 'placeholder';
+  const desc =
+    'Non eiusmod anim quis pariatur nisi deserunt. Nisi quis qui magna elit ad cupidatat occaecat est ullamco fugiat ipsum pariatur excepteur officia. Elit exercitation sit reprehenderit aute officia et amet ad. Ut mollit non velit reprehenderit. \
+  Consequat commodo officia aute elit amet commodo esse ea adipisicing. Reprehenderit et duis sint dolor nostrud aute dolor nulla. Aliquip dolore consequat quis non labore ex officia amet nisi ea. Minim irure sit fugiat nostrud tempor velit laborum. Voluptate ut esse est magna. Labore esse reprehenderit proident ullamco pariatur. Ea pariatur ullamco laborum labore consectetur officia cillum anim incididunt sunt qui.';
+  const repo = 'https://github.com/trg5pdx/haskell-webserver';
+  const other_link = 'https://github.com/trg5pdx/';
+  const [modal, modalState] = useState(false);
+
+  const desc_2 =
+    'Sint mollit excepteur tempor et fugiat fugiat elit. Sint deserunt dolor minim exercitation ut deserunt duis est. Ullamco dolore occaecat duis dolor commodo enim aute veniam ullamco pariatur cillum laboris. Tempor velit quis nostrud enim ad ut dolor sint magna et exercitation voluptate. \
+Minim velit non ullamco est cillum sunt. Irure dolore incididunt voluptate culpa aute tempor amet esse exercitation tempor anim ullamco laboris fugiat. Ea aute sint enim aute. \
+Magna occaecat deserunt labore cillum aute sit eu irure reprehenderit nostrud Lorem deserunt. Tempor et do sit excepteur voluptate enim et consectetur et. Cillum nisi id quis do ut pariatur consequat proident. Ex duis pariatur tempor Lorem aliqua eu duis do. Pariatur dolore ex reprehenderit eiusmod adipisicing veniam magna eu sunt dolore sit exercitation nulla. Velit eu excepteur ad nisi occaecat esse Lorem fugiat laboris ex in commodo labore magna. Proident commodo id consectetur amet magna ullamco dolore ut nostrud nostrud laborum. \
+Labore consectetur est exercitation ut quis labore aliqua excepteur Lorem cillum. Culpa eu quis non veniam veniam ea id culpa aliquip exercitation do. Eu Lorem adipisicing sit ut labore. Magna ad minim dolor do excepteur excepteur nulla enim occaecat commodo laboris anim cillum. Labore laboris minim non fugiat. Esse esse consequat qui incididunt excepteur commodo anim non dolore fugiat magna amet cupidatat sint. Ut consectetur aliqua in tempor ad nisi sit deserunt eiusmod. \
+Reprehenderit minim eu incididunt pariatur aute dolor ipsum aliquip. Labore cupidatat dolore Lorem ex adipisicing deserunt deserunt fugiat est. Elit qui amet laboris magna non. Veniam officia non labore officia excepteur excepteur. \
+Eu dolor Lorem adipisicing Lorem exercitation adipisicing nostrud laborum do ad cupidatat esse. Velit qui commodo ullamco irure ex amet enim amet mollit consectetur quis. Do Lorem nulla quis est veniam in qui qui. \
+Minim enim aliqua ut cillum quis. Ipsum Lorem eu elit adipisicing laboris quis culpa eiusmod pariatur amet consectetur. Commodo reprehenderit irure in consectetur eu. Dolor consectetur mollit sunt veniam cillum nisi nulla. Commodo reprehenderit amet excepteur voluptate id ea incididunt laboris exercitation. Sint elit amet et reprehenderit reprehenderit laborum non ad minim ipsum. Irure minim reprehenderit dolor sint non eu velit ut aute reprehenderit excepteur sit. \
+Pariatur ad laborum id esse. Nostrud qui commodo sunt culpa occaecat ad laborum minim. Consectetur ullamco enim qui aliquip nulla excepteur exercitation aliquip voluptate ullamco eiusmod minim culpa eu. \
+Lorem reprehenderit do labore labore enim dolore consequat est enim sit sunt ad ea. Ea velit adipisicing culpa incididunt eu reprehenderit excepteur elit occaecat tempor eiusmod irure reprehenderit. Voluptate minim nostrud quis cillum nostrud eu consectetur aliquip dolore sit. Consectetur commodo Lorem ex laborum reprehenderit. Ex aute laboris incididunt dolore sint incididunt veniam ullamco magna elit. \
+Enim cupidatat cillum laborum exercitation anim ex ullamco laborum voluptate. Eu labore excepteur ut consectetur nostrud ex in excepteur et. Ipsum ut aliqua culpa dolor. Consectetur non amet ullamco anim ex est incididunt non reprehenderit deserunt nulla nisi. Excepteur dolore est deserunt cillum incididunt irure pariatur magna labore voluptate excepteur non aliquip. Ex ut pariatur amet magna enim velit duis consectetur deserunt laborum ea. Ipsum velit sint occaecat magna deserunt anim consectetur';
+
   return (
     <>
       <Head>
@@ -14,47 +43,46 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body>
-        <Navbar />
-        <main className={styles.main}>
-          <div className="m-6 h-full lg:grid lg:grid-cols-6">
-            <div className="col-span-3 self-center">
-              <h1 className="text-4xl font-bold text-purple-600">
-                Hi, I'm Thomas
-              </h1>
-              <h2 className="text-xl font-bold">
-                I'm a software developer from Portland
-              </h2>
-            </div>
-            <img
-              src="https://placekitten.com/600/400"
-              className="col-span-3"
-            ></img>
-            <div className="col-span-6">
-              <h2 className="text-2xl font-bold text-purple-600">
-                Projects I've worked on
-              </h2>
-            </div>
-            <Card variant="outlined" className="col-span-2">
-              <CardContent>
-                <h3>Placeholder</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  blanditiis pariatur natus inventore iste accusamus deserunt
-                  molestiae similique exercitationem aliquid doloribus iusto
-                  architecto, praesentium quos repudiandae, consequatur incidunt
-                  repellat fuga.
-                </p>
-              </CardContent>
-              <CardActions>
-                <Button size="medium" onClick={() => alert('AAA')}>
-                  Learn more
-                </Button>
-              </CardActions>
-            </Card>
+      <Navbar />
+      <main className={styles.main}>
+        <Modal open={modal} onClose={() => modalState(false)}>
+          <p>testing</p>
+        </Modal>
+        <div className="m-6 h-full lg:grid lg:grid-cols-6">
+          <div className="col-span-3 self-center">
+            <h1 className="text-4xl font-bold text-purple-600">
+              Hi, I'm Thomas
+            </h1>
+            <h2 className="text-xl font-bold">
+              I'm a software developer from Portland
+            </h2>
           </div>
-        </main>
-      </body>
+          <img
+            src="https://placekitten.com/600/400"
+            className="col-span-3"
+          ></img>
+          <div className="col-span-6">
+            <h2 className="text-2xl font-bold text-purple-600">
+              Projects I've worked on
+            </h2>
+          </div>
+          <Card variant="outlined">
+            <CardContent className={styles.card_style}>
+              <Project
+                title={title}
+                desc={desc}
+                repo={repo}
+                other_link={other_link}
+              />
+            </CardContent>
+            <CardActions>
+              <Button size="medium" onClick={() => modalState(true)}>
+                Learn more
+              </Button>
+            </CardActions>
+          </Card>
+        </div>
+      </main>
     </>
   );
 }
