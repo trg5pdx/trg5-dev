@@ -1,23 +1,24 @@
 import styles from '@/styles/Home.module.css';
+import ProjectData from '../constants/constants';
 
 const project = (props) => {
-  const title = props.title;
-  const desc = props.desc;
-  const repo = props.repo;
-  const other_link = props.other_link;
+  const projData = props.projData;
 
   return (
     <>
-      <h2>{title}</h2>
-      <p>{desc}</p>
+      <h2>{projData.title}</h2>
+      <p>{projData.desc}</p>
       <p>
-        Repo:
-        <a href={repo}> click here</a>
-        {other_link && (
+        {projData.repo != '' && (
+          <>
+            Repo:
+            <a href={projData.repo}> click here</a>
+          </>
+        )}
+        {projData.other && (
           <>
             <br />
-            Other link: {/* pass in link title */}
-            <a href={other_link}> click here</a>
+            {projData.other_title}:<a href={projData.other}> click here</a>
           </>
         )}
       </p>
