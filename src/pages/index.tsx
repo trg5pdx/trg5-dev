@@ -4,53 +4,14 @@ import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
 import Navbar from '../components/navbar';
 import Project from '../components/project';
-import ProjectModal from '../components/modal';
 import ProjectData from '../constants/constants';
-import { useState, useRef } from 'react';
-import { Button, Card, CardActions, CardContent } from '@mui/material';
 
 export default function Home() {
   const projData1 = new ProjectData(
-    'placeholder',
-    `
-      Elit sit commodo nulla mollit elit consequat ad consectetur eiusmod
-      officia esse anim. Sint mollit labore cupidatat elit elit do proident qui
-      sunt adipisicing voluptate amet. Magna sit anim excepteur anim anim enim
-      quis culpa sit aliqua. Esse irure minim adipisicing incididunt voluptate
-      duis consectetur magna aliquip. Proident eiusmod exercitation proident qui
-      incididunt ipsum do duis quis incididunt magna eiusmod ex velit. Ex in
-      voluptate minim enim exercitation duis anim incididunt enim labore aute do
-      ex anim. Eiusmod sit pariatur quis adipisicing do laboris id quis anim
-      fugiat quis ipsum minim. Aute anim laborum qui voluptate nulla non Lorem
-      dolor aliquip commodo enim. Ipsum velit commodo tempor irure cillum culpa
-      occaecat occaecat aute consectetur esse excepteur. Laboris veniam ex ut
-      esse excepteur Lorem minim eu deserunt adipisicing occaecat deserunt elit
-      reprehenderit. Deserunt in fugiat Lorem excepteur reprehenderit quis eu
-      commodo laborum. Laborum et enim excepteur eiusmod sunt veniam velit
-      proident aute elit incididunt.
-    `,
     'https://github.com/trg5pdx/haskell-webserver',
     'https://github.com/trg5pdx/',
     'My github: '
   );
-
-  const projData2 = new ProjectData(
-    'placeholder',
-    `
-      Elit sit commodo nulla mollit elit consequat ad consectetur eiusmod
-      officia esse anim. Sint mollit labore cupidatat elit elit do proident qui
-      sunt adipisicing voluptate amet. Magna sit anim excepteur anim anim enim
-      quis culpa sit aliqua. Esse irure minim adipisicing incididunt voluptate
-      duis consectetur magna aliquip. Proident eiusmod exercitation proident qui
-      incididunt ipsum do duis quis incididunt magna eiusmod ex velit. Ex in
-      voluptate minim enim exercitation duis anim incididunt enim labore aute do
-      ex anim. Eiusmod sit pariatur quis adipisicing do laboris id quis anim
-    `,
-    'https://github.com/trg5pdx/haskell-webserver'
-  );
-
-  const [modal, modalState] = useState(false);
-  const modalRef = useRef();
 
   return (
     <>
@@ -62,13 +23,11 @@ export default function Home() {
       </Head>
       <Navbar />
       <main className={styles.main}>
-        <ProjectModal modal={modal} modalState={(val) => modalState(val)} />
-        <div className="m-6 h-full lg:grid lg:grid-cols-6">
+        <div className="m-6 h-full w-full lg:grid lg:grid-cols-6">
           <div className="col-span-3 self-center">
-            <h1 className="text-4xl font-bold text-purple-600">
-              Hi, I'm Thomas
-            </h1>
-            <h2 className="text-xl font-bold">
+            <h1 className={styles.main_title}>Hi, I'm Thomas</h1>
+            <br />
+            <h2 className={styles.main_subtitle}>
               I'm a software developer from Portland
             </h2>
           </div>
@@ -76,31 +35,12 @@ export default function Home() {
             src="https://placekitten.com/600/400"
             className="col-span-3"
           ></img>
-          <div className="col-span-6">
+          <div className="col-span-6 w-11/12">
             <h2 className="text-2xl font-bold text-purple-600">
               Projects I've worked on
             </h2>
+            <Project />
           </div>
-          <Card variant="outlined">
-            <CardContent className={styles.card_style}>
-              <Project projData={projData1} />
-            </CardContent>
-            <CardActions>
-              <Button size="medium" onClick={() => modalState(true)}>
-                Learn more
-              </Button>
-            </CardActions>
-          </Card>
-          <Card variant="outlined">
-            <CardContent className={styles.card_style}>
-              <Project projData={projData2} />
-            </CardContent>
-            <CardActions>
-              <Button size="medium" onClick={() => modalState(true)}>
-                Learn more
-              </Button>
-            </CardActions>
-          </Card>
         </div>
       </main>
     </>

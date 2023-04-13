@@ -2,15 +2,33 @@ import styles from '@/styles/Home.module.css';
 import { useState, forwardRef } from 'react';
 import ProjectData from '../constants/constants';
 import Project from './project';
+import { data } from '../data/data';
 import { Box, Modal } from '@mui/material';
 
 const ProjectModal = forwardRef((props, ref) => {
-  const [projData, setProjData] = useState(new ProjectData('', '', ''));
-
+  const projData = data.projects[props.projIndex];
   return (
     <Modal open={props.modal} onClose={() => props.modalState(false)}>
-      <Box className="absolute left-1/2 top-1/2 w-[700px]  translate-x-[-50%] translate-y-[-50%] rounded-xl border-solid border-gray-400 bg-gray-300 p-8">
-        <Project projData={projData} />
+      <Box className={styles.modal}>
+        <h2 className={styles.proj_title}>{projData.title}</h2>
+        <br />
+        <p className={styles.proj_desc}>{projData.desc}</p>
+        <br />
+        <br />
+        <p className={styles.proj_desc}>
+          {projData.repo != '' && (
+            <>
+              Repo:
+              <a href={projData.repo}>click here</a>
+            </>
+          )}
+          {projData.other && (
+            <>
+              <br />
+              {projData.otherTitle}:<a href={projData.other}> click here</a>
+            </>
+          )}
+        </p>
       </Box>
     </Modal>
   );
