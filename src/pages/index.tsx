@@ -3,16 +3,12 @@ import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
 import Navbar from '../components/navbar';
-import Project from '../components/project';
-import ProjectData from '../constants/constants';
+import Project from '../components/sections/project';
+import About from '../components/sections/about';
+import Skills from '../components/sections/skills';
+import Contact from '../components/sections/contact';
 
 export default function Home() {
-  const projData1 = new ProjectData(
-    'https://github.com/trg5pdx/haskell-webserver',
-    'https://github.com/trg5pdx/',
-    'My github: '
-  );
-
   return (
     <>
       <Head>
@@ -24,23 +20,24 @@ export default function Home() {
       <Navbar />
       <main className={styles.main}>
         <div className="m-6 h-full w-full lg:grid lg:grid-cols-6">
-          <div className="col-span-3 self-center">
-            <h1 className={styles.main_title}>Hi, I'm Thomas</h1>
+          <div className="col-span-3 mx-2 w-11/12 self-center py-11 lg:mx-0 lg:w-full lg:py-0">
+            <h1 className={styles.main_title}>{"Hi, I'm Thomas"}</h1>
             <br />
             <h2 className={styles.main_subtitle}>
-              I'm a software developer from Portland
+              {"I'm a software developer from Portland"}
             </h2>
           </div>
-          <img
+          <Image
             src="https://placekitten.com/600/400"
-            className="col-span-3"
-          ></img>
-          <div className="col-span-6 w-11/12">
-            <h2 className="text-2xl font-bold text-purple-600">
-              Projects I've worked on
-            </h2>
-            <Project />
-          </div>
+            alt="a picture of a cat"
+            className="col-span-3 mx-2 w-11/12 lg:mx-0 lg:w-full"
+            width={600}
+            height={400}
+          />
+          <About />
+          <Skills />
+          <Project />
+          <Contact />
         </div>
       </main>
     </>

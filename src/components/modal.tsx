@@ -1,14 +1,23 @@
 import styles from '@/styles/Home.module.css';
-import { useState, forwardRef } from 'react';
+import { useState, forwardRef, SetStateAction } from 'react';
+import Link from 'next/link';
 import ProjectData from '../constants/constants';
-import Project from './project';
+import Project from './sections/project';
 import { data } from '../data/data';
-import { Box, Modal } from '@mui/material';
+import { Box, Button, Modal } from '@mui/material';
 
-const ProjectModal = forwardRef((props, ref) => {
-  const projData = data.projects[props.projIndex];
+const ProjectModal = ({
+  modal,
+  modalState,
+  projIndex,
+}: {
+  modal: boolean;
+  modalState: (arg0: boolean) => void;
+  projIndex: number;
+}) => {
+  const projData = data.projects[projIndex];
   return (
-    <Modal open={props.modal} onClose={() => props.modalState(false)}>
+    <Modal open={modal} onClose={() => modalState(false)}>
       <Box className={styles.modal}>
         <h2 className={styles.proj_title}>{projData.title}</h2>
         <br />
@@ -19,19 +28,29 @@ const ProjectModal = forwardRef((props, ref) => {
           {projData.repo != '' && (
             <>
               Repo:
-              <a href={projData.repo}>click here</a>
+              <Link href={projData.repo}>click here</Link>
             </>
           )}
           {projData.other && (
             <>
               <br />
-              {projData.otherTitle}:<a href={projData.other}> click here</a>
+              {projData.otherTitle}:
+              <Link href={projData.other}> click here</Link>
             </>
           )}
         </p>
+        <Button
+          size="medium"
+          className={styles.card_button}
+          onClick={() => {
+            modalState(false);
+          }}
+        >
+          Close
+        </Button>
       </Box>
     </Modal>
   );
-});
+};
 
 export default ProjectModal;

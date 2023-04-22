@@ -1,7 +1,7 @@
 .main {
   display: flex;
   min-height: 100vh;
-  @apply w-11/12 justify-items-center lg:mx-12;
+  @apply w-11/12 justify-items-center scroll-smooth lg:mx-12;
 }
 
 .core {
@@ -26,6 +26,18 @@
   @apply rounded bg-neutral-300 p-2 text-xl font-bold;
 }
 
+.section {
+  @apply col-span-6 w-full py-8;
+}
+
+.section_title {
+  @apply mx-2 text-2xl font-bold text-purple-600;
+}
+
+.section_body {
+  @apply mx-2 rounded bg-neutral-300 p-6;
+}
+
 .card_format {
   @apply max-h-60 overflow-hidden;
 }
@@ -47,7 +59,8 @@
 }
 
 .modal {
-  @apply absolute left-1/2 top-1/2 w-full max-w-[700px] translate-x-[-50%] translate-y-[-50%] rounded-xl border-solid border-gray-400 bg-gray-300 p-8;
+  overflow-y: auto;
+  @apply absolute left-1/2 top-1/2 z-50 h-full w-full max-w-[700px] translate-x-[-50%] translate-y-[-50%] rounded-xl border-solid border-gray-400 bg-gray-300 p-8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -64,6 +77,10 @@
   }
 
   .main_subtitle {
+    @apply bg-neutral-800;
+  }
+
+  .section_body {
     @apply bg-neutral-800;
   }
 

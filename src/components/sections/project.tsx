@@ -1,14 +1,13 @@
 import styles from '@/styles/Home.module.css';
-import ProjectData from '../constants/constants';
-import { data } from '../data/data';
-import ProjectModal from '../components/modal';
+import { data } from '../../data/data';
+import ProjectModal from '../modal';
 import { useState, useRef } from 'react';
 import { Button, Card, CardActions, CardContent } from '@mui/material';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
-const project = (props) => {
-  const [modal, modalState] = useState(false);
+const Project = () => {
+  const [projModal, toggleModal] = useState(false);
   const [projIndex, projIndexState] = useState(0);
 
   const responsive = {
@@ -17,8 +16,13 @@ const project = (props) => {
     1200: { items: 3, itemsFit: 'contain' },
   };
 
+  /* 
+    Using index since the list I'm building is static
+    Source: 
+    https://adhithiravi.medium.com/why-do-i-need-keys-in-react-lists-dbb522188bbb 
+  */
   const project_list = data.projects.map((projData, index) => (
-    <Card variant="outlined" className={styles.card_style}>
+    <Card key={index} variant="outlined" className={styles.card_style}>
       <CardContent className={styles.card_format}>
         <h2 className={styles.proj_title}>{projData.title}</h2>
         <br />
@@ -30,7 +34,7 @@ const project = (props) => {
           className={styles.card_button}
           onClick={() => {
             projIndexState(index);
-            modalState(true);
+            toggleModal(true);
           }}
         >
           Learn more
@@ -38,16 +42,13 @@ const project = (props) => {
       </CardActions>
     </Card>
   ));
-  const test = [
-    <div className="relative">aaa</div>,
-    <div className="relative">b</div>,
-  ];
 
   return (
-    <>
+    <div className={styles.section}>
+      <h2 className={styles.section_title}>{"Projects I've worked on"}</h2>
       <ProjectModal
-        modal={modal}
-        modalState={(val) => modalState(val)}
+        modal={projModal}
+        modalState={(val: boolean) => toggleModal(val)}
         projIndex={projIndex}
       />
       {/* fix innerWidth, currently only limits it to the 2nd breakpoint and
@@ -59,8 +60,8 @@ const project = (props) => {
         responsive={responsive}
         controlsStrategy="alternate"
       />
-    </>
+    </div>
   );
 };
 
-export default project;
+export default Project;

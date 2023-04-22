@@ -1,4 +1,83 @@
 export const data = {
+  about: /* HTML */ `
+    Voluptate reprehenderit et sunt qui duis enim cillum nulla ullamco. Pariatur
+    dolore ad consectetur eiusmod minim enim magna non pariatur do. Non minim
+    nostrud culpa culpa Lorem id voluptate. Eiusmod voluptate irure in in ad
+    nostrud proident ullamco sint. Enim reprehenderit ex adipisicing elit Lorem
+    ad esse eu. Labore enim ullamco ipsum sint. Laboris reprehenderit qui tempor
+    sunt. Mollit nisi occaecat minim dolor commodo sint minim id non amet. Enim
+    proident cupidatat irure quis ullamco minim anim. Irure dolore sint laboris
+    elit aliqua officia voluptate dolore occaecat amet consectetur nisi. In
+    reprehenderit ad nulla fugiat deserunt mollit veniam amet adipisicing dolor.
+    Ea do fugiat qui nulla est deserunt ea fugiat sit. Amet ullamco labore in
+    sint. Nisi irure culpa aute eiusmod Lorem deserunt amet sunt dolor officia
+    elit labore eiusmod. Magna fugiat irure Lorem cillum. Ut ut ex sit cillum.
+  `,
+  skills: [
+    {
+      item: 'Programming Languages and Frameworks',
+      subitems: [
+        'C/C++',
+        'HTML/CSS',
+        'Javascript/TypeScript',
+        'React',
+        'TailwindCSS',
+        'PostgreSQL',
+        'Rust',
+        'Haskell',
+      ],
+    },
+    {
+      item: 'Technical Writing/Documentation',
+    },
+    {
+      item: 'Familiar with Networking Concepts',
+    },
+    {
+      item: 'Software',
+      subitems: [
+        'OSes: Linux, Windows',
+        'Coding tools: Vim, VSCode, Gdb, Git',
+        'Office/Design: Microsoft Office, Figma',
+        'Network tools: Wireshark',
+      ],
+    },
+  ],
+  school: [
+    {
+      item: 'Degree: BS Computer Science',
+    },
+    {
+      item: 'Important Classes',
+      subitems: [
+        'Internetworking Protocols',
+        'Functional Programming',
+        'Unit Testing/Branching Strategies',
+        'Operating Systems',
+        'Algorithms',
+        'Databases',
+        'Programming Languages',
+        'Code Reading & Review',
+        'Software Engineering',
+      ],
+    },
+    {
+      item: 'Capstone: Blurp webapp',
+      subitems: [
+        'Project Duration: Sep. 2022 - Mar. 2023',
+        'Worked as a Frontend developer on a team of 10 people and 2 team leads',
+        'Used React.js and the SigmaJS and Graphology libraries',
+      ],
+    },
+  ],
+  work: [
+    {
+      item: 'Office Assistant @ Upward Bound ETS: Sep 2019 - Mar 2023',
+    },
+    {
+      item: 'Tutor @ Upward Bound ETS: Sep 2017 - Jun 2019',
+    },
+  ],
   projects: [
     {
       title: 'Blurp',
