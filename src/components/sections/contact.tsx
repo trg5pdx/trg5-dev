@@ -1,6 +1,6 @@
 import styles from '@/styles/Home.module.css';
 import { useState } from 'react';
-import { data } from '../../data/data';
+import { send } from '@emailjs/browser';
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -9,21 +9,43 @@ const Contact = () => {
 
   const handleSubmit = (e: React.BaseSyntheticEvent) => {
     e.preventDefault();
-    alert(
-      `
-        name: ${name}
-        email: ${email}
-        message: ${message}
-      `
-    );
+    const service_id = process.env.NEXT_PUBLIC_SERVICE_ID || 'none';
+    const template_id = process.env.NEXT_PUBLIC_TEMPLATE_ID || 'none';
+    const user_id = process.env.NEXT_PUBLIC_USER_ID || 'none';
+
+    if (service_id == 'none' || template_id == 'none' || user_id == 'none') {
+      console.log('failure');
+      return;
+    }
+
+    /* 
+      Used the article below for sending emails:
+      https://dev.to/daliboru/how-to-send-emails-from-a-form-in-react-emailjs-27d1 
+    */
+    send(
+      service_id,
+      template_id,
+      {
+        from_name: name,
+        to_name: 'trg5',
+        message: message,
+        reply_to: email,
+      },
+      user_id
+    )
+      .then((response) => {
+        console.log('SUCCESS', response.status, response.text);
+      })
+      .catch((err) => {
+        console.log('Failed...', err);
+      });
   };
 
   return (
     <div className={styles.section}>
       <h2 className={styles.section_title}>Contact me</h2>
       <div className={styles.section_body}>
-        Want to get in contact with me? Fill out the form below and I'll respond
-        to you!
+        {`Want to get in contact with me? Fill out the form below and I'll respond to you!`}
         <br />
         <br />
         <form onSubmit={handleSubmit} className="grid lg:grid-cols-2">
