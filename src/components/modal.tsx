@@ -1,5 +1,5 @@
 import styles from '@/styles/Home.module.css';
-import { useState, forwardRef, SetStateAction } from 'react';
+import { useState, useEffect, forwardRef, SetStateAction } from 'react';
 import Link from 'next/link';
 import ProjectData from '../constants/constants';
 import Project from './sections/project';
@@ -15,6 +15,12 @@ const ProjectModal = ({
   modalState: (arg0: boolean) => void;
   projIndex: number;
 }) => {
+  if (modal) {
+    document.body.style.position = 'fixed';
+  } else {
+    document.body.style.position = 'static';
+  }
+
   const projData = data.projects[projIndex];
   return (
     <Modal open={modal} onClose={() => modalState(false)}>

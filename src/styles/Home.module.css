@@ -1,15 +1,15 @@
 .main {
   display: flex;
   min-height: 100vh;
-  @apply scroll-smooth w-11/12 justify-items-center lg:mx-12;
+  @apply w-11/12 justify-items-center scroll-smooth lg:mx-12;
 }
 
 .core {
-  @apply bg-slate-600 w-full;
+  @apply w-full bg-slate-600;
 }
 
 .navbar {
-  @apply bg-neutral-300 sticky top-0 flex place-content-center py-2;
+  @apply sticky top-0 flex place-content-center bg-neutral-300 py-2;
 }
 
 .navbar_button {
@@ -18,12 +18,12 @@
 
 .main_title {
   width: fit-content;
-  @apply bg-neutral-300 rounded p-2 text-4xl font-bold text-purple-600;
+  @apply rounded bg-neutral-300 p-2 text-4xl font-bold text-purple-600;
 }
 
 .main_subtitle {
   width: fit-content;
-  @apply bg-neutral-300 rounded p-2 text-xl font-bold;
+  @apply rounded bg-neutral-300 p-2 text-xl font-bold;
 }
 
 .section {
@@ -35,19 +35,19 @@
 }
 
 .section_body {
-  @apply bg-neutral-300 mx-2 rounded p-6;
+  @apply mx-2 rounded bg-neutral-300 p-6;
 }
 
 .card_format {
-  @apply max-h-60 overflow-hidden;
+  @apply h-60 overflow-hidden;
 }
 
 .card_style {
-  @apply bg-neutral-100 mx-2;
+  @apply mx-2 bg-neutral-100;
 }
 
 .card_button {
-  @apply text-neutral-900 font-bold;
+  @apply font-bold text-neutral-900;
 }
 
 .proj_title {
@@ -60,7 +60,7 @@
 
 .modal {
   overflow-y: auto;
-  @apply absolute left-1/2 top-1/2 z-50 h-full w-full max-w-[700px] translate-x-[-50%] translate-y-[-50%] rounded-xl border-solid border-gray-400 bg-gray-300 p-8;
+  @apply absolute left-1/2 top-1/2 z-50 h-5/6 w-full max-w-[700px] translate-x-[-50%] translate-y-[-50%] rounded-xl border-solid border-gray-400 bg-gray-300 p-8 lg:h-fit lg:max-h-[700px];
 }
 
 @media (prefers-color-scheme: dark) {

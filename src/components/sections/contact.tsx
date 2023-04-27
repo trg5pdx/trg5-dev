@@ -14,7 +14,7 @@ const Contact = () => {
     const user_id = process.env.NEXT_PUBLIC_USER_ID || 'none';
 
     if (service_id == 'none' || template_id == 'none' || user_id == 'none') {
-      console.log('failure');
+      console.log('Failed to get emailJS IDs');
       return;
     }
 
@@ -35,6 +35,9 @@ const Contact = () => {
     )
       .then((response) => {
         console.log('SUCCESS', response.status, response.text);
+        setName('');
+        setEmail('');
+        setMessage('');
       })
       .catch((err) => {
         console.log('Failed...', err);
