@@ -26,7 +26,7 @@ const Project = () => {
       <CardContent className={styles.card_format}>
         <h2 className={styles.proj_title}>{projData.title}</h2>
         <br />
-        <p className={styles.proj_desc}>{projData.desc}</p>
+        <p className={styles.card_desc}>{projData.desc}</p>
       </CardContent>
       <CardActions>
         <Button

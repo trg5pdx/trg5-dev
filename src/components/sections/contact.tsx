@@ -51,7 +51,7 @@ const Contact = () => {
         {`Want to get in contact with me? Fill out the form below and I'll respond to you!`}
         <br />
         <br />
-        <form onSubmit={handleSubmit} className="grid lg:grid-cols-2">
+        <form onSubmit={handleSubmit} className="lg:grid lg:grid-cols-2">
           <div>
             <label htmlFor="name" className="hidden">
               Name:

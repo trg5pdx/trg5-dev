@@ -15,22 +15,45 @@ const ProjectModal = ({
   modalState: (arg0: boolean) => void;
   projIndex: number;
 }) => {
-  if (modal) {
-    document.body.style.position = 'fixed';
-  } else {
-    document.body.style.position = 'static';
-  }
+  /* 
+    Done to prevent doc. being undef. on initial load
+    link: https://dev.to/typicoul/fixing-next-js-referenceerror-document-is-not-defined-2jgi
+
+    also used this to prevent the background from scrolling
+    link: https://medium.com/react-camp/how-to-fight-the-body-scroll-2b00267b37ac
+  */
+  useEffect(() => {
+    const main = document.querySelector('html');
+    if (main) {
+      if (modal) {
+        main.style.overflow = 'hidden';
+      } else {
+        main.style.overflow = 'unset';
+      }
+    }
+  }, [modal]);
 
   const projData = data.projects[projIndex];
   return (
     <Modal open={modal} onClose={() => modalState(false)}>
       <Box className={styles.modal}>
-        <h2 className={styles.proj_title}>{projData.title}</h2>
-        <br />
-        <p className={styles.proj_desc}>{projData.desc}</p>
-        <br />
+        <div className="grid grid-cols-2">
+          <h2 className={styles.proj_title}>{projData.title}</h2>
+          <Button
+            size="medium"
+            className={styles.card_button}
+            onClick={() => {
+              modalState(false);
+            }}
+          >
+            Close
+          </Button>
+        </div>
         <br />
         <p className={styles.proj_desc}>
+          {projData.desc}
+          <br />
+          <br />
           {projData.repo != '' && (
             <>
               Repo:
@@ -45,15 +68,6 @@ const ProjectModal = ({
             </>
           )}
         </p>
-        <Button
-          size="medium"
-          className={styles.card_button}
-          onClick={() => {
-            modalState(false);
-          }}
-        >
-          Close
-        </Button>
       </Box>
     </Modal>
   );
