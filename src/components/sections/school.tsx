@@ -2,17 +2,17 @@ import styles from '@/styles/Home.module.css';
 import { data } from '../../data/data';
 import { gen_list } from '../../utils/utils';
 
-const Skills = () => {
+const School = () => {
   return (
-    <section className={styles.section} id="skills">
-      <h2 className={styles.section_title}>Skills</h2>
+    <section className={styles.section} id="school">
+      <h2 className={styles.section_title}>Education</h2>
       <div className={styles.section_body}>
         <div className={styles.list_format}>
-          <ul className="list-inside list-disc">{gen_list(data.skills)}</ul>
+          <ul className={styles.list_style}>{gen_list(data.school)}</ul>
         </div>
       </div>
     </section>
   );
 };
 
-export default Skills;
+export default School;

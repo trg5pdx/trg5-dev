@@ -45,14 +45,17 @@ const Contact = () => {
   };
 
   return (
-    <div className={styles.section}>
+    <section className={styles.section} id="contact">
       <h2 className={styles.section_title}>Contact me</h2>
       <div className={styles.section_body}>
         {`Want to get in contact with me? Fill out the form below and I'll respond to you!`}
         <br />
         <br />
-        <form onSubmit={handleSubmit} className="lg:grid lg:grid-cols-2">
-          <div>
+        <form
+          onSubmit={handleSubmit}
+          className="justify-between lg:grid lg:grid-cols-2"
+        >
+          <div className="my-2 lg:mr-2">
             <label htmlFor="name" className="hidden">
               Name:
             </label>
@@ -62,13 +65,11 @@ const Contact = () => {
               id="name"
               value={name}
               placeholder="Name"
-              className="w-11/12 rounded"
+              className="w-full rounded"
               onChange={(e) => setName(e.target.value)}
             />
-            <br />
-            <br />
           </div>
-          <div>
+          <div className="my-2 lg:ml-2">
             <label htmlFor="email" className="hidden">
               Email:
             </label>
@@ -78,13 +79,11 @@ const Contact = () => {
               id="email"
               value={email}
               placeholder="Email"
-              className="w-11/12 rounded"
+              className="w-full rounded"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <br />
-            <br />
           </div>
-          <div className="col-span-2">
+          <div className="col-span-2 my-2">
             <label htmlFor="email" className="hidden">
               Message:
             </label>
@@ -99,12 +98,15 @@ const Contact = () => {
             <br />
             <br />
           </div>
-          <button type="submit" className="rounded bg-slate-200 text-black">
+          <button
+            type="submit"
+            className="col-span-2 h-14 w-full rounded bg-slate-200 font-bold text-black lg:col-span-1"
+          >
             Submit
           </button>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 

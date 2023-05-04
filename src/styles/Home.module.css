@@ -1,7 +1,7 @@
 .main {
-  display: flex;
-  min-height: 100vh;
-  @apply w-11/12 justify-items-center scroll-smooth lg:mx-12;
+  display: grid;
+  width: 96%;
+  @apply mx-2 h-full grid-cols-6 justify-items-center scroll-smooth lg:mx-10;
 }
 
 .core {
@@ -27,7 +27,7 @@
 }
 
 .section {
-  @apply col-span-6 w-full py-8;
+  @apply col-span-6 w-11/12 justify-self-center py-8 lg:w-4/5;
 }
 
 .section_title {
@@ -71,6 +71,18 @@
   @apply absolute left-1/2 top-1/2 z-50 h-5/6 w-full max-w-[700px] translate-x-[-50%] translate-y-[-50%] rounded-xl border-solid border-gray-400 bg-gray-300 p-8 lg:h-full lg:max-h-[700px];
 }
 
+.footer {
+  @apply my-10 text-center text-gray-900;
+}
+
+.list_format {
+  @apply lg:grid lg:grid-cols-2;
+}
+
+.list_style {
+  @apply list-inside list-disc;
+}
+
 @media (prefers-color-scheme: dark) {
   .navbar {
     @apply bg-black;
@@ -94,6 +106,10 @@
 
   .modal {
     @apply bg-neutral-800;
+  }
+
+  .footer {
+    @apply text-gray-400;
   }
 
   .card_style {

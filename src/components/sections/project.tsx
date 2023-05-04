@@ -44,7 +44,7 @@ const Project = () => {
   ));
 
   return (
-    <div className={styles.section}>
+    <section className={styles.section} id="projects">
       <h2 className={styles.section_title}>{"Projects I've worked on"}</h2>
       <ProjectModal
         modal={projModal}
@@ -60,7 +60,7 @@ const Project = () => {
         responsive={responsive}
         controlsStrategy="alternate"
       />
-    </div>
+    </section>
   );
 };
 
