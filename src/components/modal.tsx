@@ -50,10 +50,14 @@ const ProjectModal = ({
           </Button>
         </div>
         <br />
-        <p className={styles.proj_desc}>
-          {projData.desc}
-          <br />
-          <br />
+        <section className={styles.proj_desc}>
+          {projData.desc.map((data, index) => (
+            <p key={index}>
+              {data}
+              <br />
+              <br />
+            </p>
+          ))}
           {projData.repo != '' && (
             <>
               Repo:
@@ -67,7 +71,7 @@ const ProjectModal = ({
               <Link href={projData.other}> click here</Link>
             </>
           )}
-        </p>
+        </section>
       </Box>
     </Modal>
   );

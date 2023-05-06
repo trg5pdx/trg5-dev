@@ -4,16 +4,16 @@
   @apply mx-2 h-full grid-cols-6 justify-items-center scroll-smooth lg:mx-10;
 }
 
-.core {
-  @apply w-full bg-slate-600;
+.navbar {
+  @apply relative top-0 flex flex-col flex-wrap justify-start bg-neutral-300 py-2 lg:flex-col;
 }
 
-.navbar {
-  @apply sticky top-0 flex place-content-center bg-neutral-300 py-2;
+.nav_container {
+  @apply flex list-none flex-col flex-wrap lg:ml-auto lg:flex-row;
 }
 
 .navbar_button {
-  @apply mx-10 text-xl font-bold text-purple-800 hover:text-pink-500;
+  @apply mx-6 my-8 text-xl font-bold text-purple-800 hover:text-pink-500;
 }
 
 .main_title {
@@ -31,7 +31,8 @@
 }
 
 .section_title {
-  @apply mx-2 text-3xl font-bold text-purple-600;
+  @apply mx-2 my-3 w-fit rounded bg-neutral-300 p-2 text-3xl font-bold 
+  text-purple-600;
 }
 
 .section_body {
@@ -43,13 +44,13 @@
 }
 
 .card_style {
-  @apply mx-2 bg-neutral-100;
+  @apply mx-2 bg-neutral-100 text-neutral-900;
 }
 
 .card_desc {
   overflow: hidden;
   text-overflow: ellipsis;
-  background-image: linear-gradient(to bottom, white 50%, transparent);
+  background-image: linear-gradient(to bottom, black 50%, transparent);
   background-clip: text;
   color: transparent;
   @apply h-5/6 text-lg;
@@ -64,11 +65,13 @@
 }
 
 .proj_desc {
-  @apply h-5/6 overflow-scroll text-lg;
+  @apply h-5/6 overflow-scroll text-lg lg:max-h-[600px];
 }
 
 .modal {
-  @apply absolute left-1/2 top-1/2 z-50 h-5/6 w-full max-w-[700px] translate-x-[-50%] translate-y-[-50%] rounded-xl border-solid border-gray-400 bg-gray-300 p-8 lg:h-full lg:max-h-[700px];
+  @apply absolute left-1/2 top-1/2 z-50 h-5/6 w-full translate-x-[-50%] translate-y-[-50%]
+    rounded-xl border-solid border-gray-400 bg-gray-300 p-8 
+    lg:h-auto lg:min-h-fit lg:max-w-[900px];
 }
 
 .footer {
@@ -83,6 +86,11 @@
   @apply list-inside list-disc;
 }
 
+.textbox {
+  @apply w-full rounded-md border-[1px] border-neutral-300 bg-neutral-100 px-2 
+  text-black;
+}
+
 @media (prefers-color-scheme: dark) {
   .navbar {
     @apply bg-black;
@@ -92,20 +100,19 @@
     @apply text-purple-600 hover:text-pink-600;
   }
 
-  .main_title {
-    @apply bg-neutral-800;
+  .textbox {
+    @apply border-neutral-800 bg-neutral-900;
   }
 
-  .main_subtitle {
-    @apply bg-neutral-800;
-  }
-
-  .section_body {
+  .main_title,
+  .main_subtitle,
+  .section_body,
+  .section_title {
     @apply bg-neutral-800;
   }
 
   .modal {
-    @apply bg-neutral-800;
+    @apply bg-neutral-900;
   }
 
   .footer {
@@ -113,10 +120,13 @@
   }
 
   .card_style {
-    @apply bg-neutral-800 text-white;
+    @apply bg-neutral-900 text-white;
   }
 
   .card_button {
     @apply text-neutral-200;
+  }
+  .card_desc {
+    background-image: linear-gradient(to bottom, white 50%, transparent);
   }
 }

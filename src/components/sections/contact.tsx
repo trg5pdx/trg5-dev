@@ -65,7 +65,7 @@ const Contact = () => {
               id="name"
               value={name}
               placeholder="Name"
-              className="w-full rounded"
+              className={styles.textbox}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
@@ -79,7 +79,7 @@ const Contact = () => {
               id="email"
               value={email}
               placeholder="Email"
-              className="w-full rounded"
+              className={styles.textbox}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -92,7 +92,7 @@ const Contact = () => {
               id="message"
               value={message}
               placeholder="Enter your message here..."
-              className="w-full rounded"
+              className={styles.textbox}
               onChange={(e) => setMessage(e.target.value)}
             />
             <br />

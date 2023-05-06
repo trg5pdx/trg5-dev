@@ -53,13 +53,15 @@ const Project = () => {
       />
       {/* fix innerWidth, currently only limits it to the 2nd breakpoint and
       otherwise errors will pop up in the console*/}
-      <AliceCarousel
-        mouseTracking
-        innerWidth={768}
-        items={project_list}
-        responsive={responsive}
-        controlsStrategy="alternate"
-      />
+      <div className={styles.section_body}>
+        <AliceCarousel
+          mouseTracking
+          innerWidth={768}
+          items={project_list}
+          responsive={responsive}
+          controlsStrategy="alternate"
+        />
+      </div>
     </section>
   );
 };
