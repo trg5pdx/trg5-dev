@@ -7,9 +7,7 @@ const School = () => {
     <section className={styles.section} id="school">
       <h2 className={styles.section_title}>Education</h2>
       <div className={styles.section_body}>
-        <div className={styles.list_format}>
-          <ul className={styles.list_style}>{gen_list(data.school)}</ul>
-        </div>
+        <div className={styles.list_format}>{gen_list(data.school)}</div>
       </div>
     </section>
   );

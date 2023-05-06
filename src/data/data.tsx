@@ -22,67 +22,100 @@ export const data = {
   ],
   skills: [
     {
-      item: 'Programming Languages and Frameworks',
-      subitems: [
-        'C/C++',
-        'HTML/CSS',
-        'Javascript/TypeScript',
-        'React',
-        'TailwindCSS',
-        'PostgreSQL',
-        'Rust',
-        'Haskell',
+      section: [
+        {
+          item: 'Programming Languages and Frameworks',
+          subitems: [
+            'C/C++',
+            'HTML/CSS',
+            'Javascript/TypeScript',
+            'React',
+            'TailwindCSS',
+            'PostgreSQL',
+            'Rust',
+            'Haskell',
+          ],
+        },
       ],
     },
     {
-      item: 'Technical Writing/Documentation',
-    },
-    {
-      item: 'Familiar with Networking Concepts',
-    },
-    {
-      item: 'Software',
-      subitems: [
-        'OSes: Linux, Windows',
-        'Coding tools: Vim, VSCode, Gdb, Git',
-        'Office/Design: Microsoft Office, Figma',
-        'Network tools: Wireshark',
+      section: [
+        {
+          item: 'Technical Writing/Documentation',
+        },
+        {
+          item: 'Familiar with Networking Concepts',
+        },
+        {
+          item: 'Software',
+          subitems: [
+            'OSes: Linux, Windows',
+            'Coding tools: Vim, VSCode, Gdb, Git',
+            'Office/Design: Microsoft Office, Figma',
+            'Network tools: Wireshark',
+          ],
+        },
       ],
     },
   ],
   school: [
     {
-      item: 'Degree: BS Computer Science',
-    },
-    {
-      item: 'Important Classes',
-      subitems: [
-        'Internetworking Protocols',
-        'Functional Programming',
-        'Unit Testing/Branching Strategies',
-        'Operating Systems',
-        'Algorithms',
-        'Databases',
-        'Programming Languages',
-        'Code Reading & Review',
-        'Software Engineering',
+      section: [
+        {
+          item: 'Degree: BS Computer Science',
+          subitems: [
+            'School: Portland State University',
+            'Attendance dates: Sep 2017 - Mar 2023',
+            'GPA: 3.45',
+          ],
+        },
       ],
     },
     {
-      item: 'Capstone: Blurp webapp',
-      subitems: [
-        'Project Duration: Sep. 2022 - Mar. 2023',
-        'Worked as a Frontend developer on a team of 10 people and 2 team leads',
-        'Used React.js and the SigmaJS and Graphology libraries',
+      section: [
+        {
+          item: 'Important Classes',
+          subitems: [
+            'Internetworking Protocols',
+            'Functional Programming',
+            'Unit Testing/Branching Strategies',
+            'Operating Systems',
+            'Algorithms',
+            'Databases',
+            'Programming Languages',
+            'Code Reading & Review',
+            'Software Engineering',
+          ],
+        },
+      ],
+    },
+    {
+      section: [
+        {
+          item: 'Capstone: Blurp webapp',
+          subitems: [
+            'Project Duration: Sep. 2022 - Mar. 2023',
+            'Worked as a Frontend developer on a team of 10 people and 2 team leads',
+            'Used React.js and the SigmaJS and Graphology libraries',
+          ],
+        },
       ],
     },
   ],
   work: [
     {
-      item: 'Office Assistant @ Upward Bound ETS: Sep 2019 - Mar 2023',
+      section: [
+        {
+          item: 'Office Assistant @ Upward Bound ETS: Sep 2019 - Mar 2023',
+        },
+      ],
     },
     {
-      item: 'Tutor @ Upward Bound ETS: Sep 2017 - Jun 2019',
+      section: [
+        {
+          item: 'Tutor @ Upward Bound ETS: Sep 2017 - Jun 2019',
+        },
+      ],
     },
   ],
   projects: [
