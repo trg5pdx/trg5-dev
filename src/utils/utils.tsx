@@ -6,9 +6,6 @@ export const gen_list = (
     }[];
   }[]
 ) => {
-  console.log(list);
-  list.map((section, _) => console.log(section));
-
   return list.map((item, i) => (
     <ul key={i} className="list-inside list-disc">
       {item.section.map((section, index) => (

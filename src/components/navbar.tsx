@@ -13,21 +13,18 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <nav className={styles.navbar}>
-      <button
-        className="mx-4 cursor-pointer text-left text-xl leading-none lg:hidden"
-        type="button"
-        onClick={() => setNavbarOpen(!navbarOpen)}
-      >
-        <MenuIcon fontSize="large" />
-      </button>
-      <div
-        className={
-          'flex-grow items-start lg:flex lg:items-center' +
-          (navbarOpen ? ' flex' : ' hidden')
-        }
-      >
-        <ul className={styles.nav_container}>
+    <>
+      <nav className={styles.navbar}>
+        <button
+          className="mx-4 cursor-pointer text-left text-xl leading-none lg:hidden"
+          type="button"
+          onClick={() => setNavbarOpen(!navbarOpen)}
+        >
+          <MenuIcon fontSize="large" />
+        </button>
+        <ul
+          className={styles.nav_container + (navbarOpen ? ' flex' : ' hidden')}
+        >
           <li>
             <Link href="/" className={styles.navbar_button}>
               Home
@@ -64,8 +61,8 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 

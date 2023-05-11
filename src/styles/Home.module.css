@@ -5,11 +5,11 @@
 }
 
 .navbar {
-  @apply relative top-0 flex flex-col flex-wrap justify-start bg-neutral-300 py-2 lg:flex-col;
+  @apply relative top-0 flex flex-col flex-wrap justify-start bg-neutral-300 py-2;
 }
 
 .nav_container {
-  @apply flex list-none flex-col flex-wrap lg:ml-auto lg:flex-row;
+  @apply flex-grow list-none flex-col flex-wrap justify-center lg:flex-row;
 }
 
 .navbar_button {

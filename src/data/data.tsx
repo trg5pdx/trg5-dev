@@ -215,9 +215,9 @@ export const data = {
       title: 'Xv6',
       desc: [
         /* HTML */ `
-          One project I worked on was for the operating system called Xv6. It’s
-          a OS thats mainly focused on teaching students about the in’s and
-          out’s of of OS development, and how they function internally without
+          I worked on Xv6 as part of my Operating Systems class at PSU. Xv6 is
+          an OS thats mainly focused on teaching students about the in’s and
+          out’s of OS development, and how they function internally without
           giving them an OS thats too complex. For Xv6, I worked on creating new
           programs for the OS that could be run from it’s command line, worked
           on how processes were handled, implemented a round-robin scheduler,

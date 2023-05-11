@@ -46,7 +46,7 @@ const Contact = () => {
 
   return (
     <section className={styles.section} id="contact">
-      <h2 className={styles.section_title}>Contact me</h2>
+      <h2 className={styles.section_title}>Contact Me</h2>
       <div className={styles.section_body}>
         {`Want to get in contact with me? Fill out the form below and I'll respond to you!`}
         <br />
