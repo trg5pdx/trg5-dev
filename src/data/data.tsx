@@ -1,24 +1,27 @@
 export const data = {
   about: [
     /* HTML */ `
-      Voluptate reprehenderit et sunt qui duis enim cillum nulla ullamco.
-      Pariatur dolore ad consectetur eiusmod minim enim magna non pariatur do.
-      Non minim nostrud culpa culpa Lorem id voluptate. Eiusmod voluptate irure
-      in in ad nostrud proident ullamco sint. Enim reprehenderit ex adipisicing
-      elit Lorem ad esse eu. Labore enim ullamco ipsum sint. Laboris
-      reprehenderit qui tempor sunt. Mollit nisi occaecat minim dolor commodo
-      sint minim id non amet. Enim proident cupidatat irure quis ullamco minim
-      anim. Irure dolore sint laboris elit aliqua officia voluptate dolore
-      occaecat amet consectetur nisi. In reprehenderit ad nulla fugiat deserunt
-      mollit veniam amet adipisicing dolor. Ea do fugiat qui nulla est deserunt
-      ea fugiat sit. Amet ullamco labore in sint. Nisi irure culpa aute eiusmod
-      Lorem deserunt amet sunt dolor officia elit labore eiusmod. Magna fugiat
-      irure Lorem cillum. Ut ut ex sit cillum.
+    Hello, I'm a software developer from Portland, Oregon, and a Portland
+    State University Alumnus. I studied Computer Science there, and I love
+    to program computers. In my personal life, along with programming hobby 
+    projects I like to play video games, clean/repair electronics, and work 
+    on mechanical keyboards. I've dabbled with QMK (software that lets you 
+    program buttons on a supported keybaord) in the past and got into 
+    soldering due to my interest in keyboards.
     `,
-    /* HTML */ `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-    Repellat, pariatur soluta, rem reprehenderit ea voluptatibus iste
-    laboriosam, dolores architecto voluptatem officiis nulla debitis magnam
-    beatae commodi delectus culpa eaque. Qui.`,
+    /* HTML */ `
+    Along with studying Computer Science at Portland State, I also took
+    multiple history classes covering a wide range of topics, from indigenous
+    history in the Americas, to medieval European history, to African history
+    before the 19th century. If I wasn't a Computer Scientist, I think I would've
+    been a history major. These classes are very important to me, as I think
+    they've helped me understand the world better, and they helped me do better
+    academically. I became a better writer, learned to really pay attention to 
+    details like the authors and their background, dates and era a piece was
+    written in. They also helped me with citing sources, which has translated
+    over to my work in CS by making notes on where I got solutions or ideas
+    from if I looked something up online. 
+    `,
   ],
   skills: [
     {
@@ -51,7 +54,8 @@ export const data = {
           subitems: [
             'OSes: Linux, Windows',
             'Coding tools: Vim, VSCode, Gdb, Git',
-            'Office/Design: Microsoft Office, Figma',
+            'Office Software: MS Office, Google Docs, LaTeX',
+            'Design: Figma, Spline',
             'Network tools: Wireshark',
           ],
         },
@@ -65,8 +69,22 @@ export const data = {
           item: 'Degree: BS Computer Science',
           subitems: [
             'School: Portland State University',
-            'Attendance dates: Sep 2017 - Mar 2023',
+            'Attendance: Sep 2017 - Mar 2023',
             'GPA: 3.45',
+          ],
+        },
+      ],
+    },
+    {
+      section: [
+        {
+          item: 'Capstone: Blurp webapp',
+          subitems: [
+            'Project Duration: Sep. 2022 - Mar. 2023',
+            'Worked as a Frontend developer on a team of 10 people and 2 team leads',
+            'Developed a frontend using React.js and Vite',
+            'Used the SigmaJS and Graphology libraries to draw nodes and edges',
+            'Users can create, delete, and edit nodes/edges on the graph'
           ],
         },
       ],
@@ -85,18 +103,6 @@ export const data = {
             'Programming Languages',
             'Code Reading & Review',
             'Software Engineering',
-          ],
-        },
-      ],
-    },
-    {
-      section: [
-        {
-          item: 'Capstone: Blurp webapp',
-          subitems: [
-            'Project Duration: Sep. 2022 - Mar. 2023',
-            'Worked as a Frontend developer on a team of 10 people and 2 team leads',
-            'Used React.js and the SigmaJS and Graphology libraries',
           ],
         },
       ],

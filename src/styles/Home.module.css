@@ -5,15 +5,19 @@
 }
 
 .navbar {
-  @apply relative top-0 flex flex-col flex-wrap justify-start bg-neutral-300 py-2;
+  @apply sticky top-0 flex flex-col flex-wrap justify-start backdrop-blur-lg py-2 z-20;
 }
 
 .nav_container {
-  @apply flex-grow list-none flex-col flex-wrap justify-center lg:flex-row;
+  @apply flex-grow list-none flex-col flex-wrap lg:justify-center lg:flex-row lg:flex justify-evenly;
+}
+
+.navbar_button_container {
+  @apply my-2 lg:mx-8 mx-4;
 }
 
 .navbar_button {
-  @apply mx-6 my-8 text-xl font-bold text-purple-800 hover:text-pink-500;
+  @apply text-xl font-bold text-purple-800 hover:text-pink-500 rounded-xl px-4 py-1 bg-neutral-300;
 }
 
 .main_title {
@@ -40,7 +44,7 @@
 }
 
 .card_format {
-  @apply h-60;
+  @apply h-60 z-10;
 }
 
 .card_style {
@@ -87,23 +91,20 @@
 }
 
 .textbox {
-  @apply w-full rounded-md border-[1px] border-neutral-300 bg-neutral-100 px-2 
+  @apply w-full rounded-md border-[2px] border-neutral-300 bg-neutral-100 px-2 
   text-black;
 }
 
 @media (prefers-color-scheme: dark) {
-  .navbar {
-    @apply bg-black;
-  }
-
   .navbar_button {
     @apply text-purple-600 hover:text-pink-600;
   }
 
   .textbox {
-    @apply border-neutral-800 bg-neutral-900;
+    @apply border-neutral-700 bg-neutral-900;
   }
 
+  .navbar_button, 
   .main_title,
   .main_subtitle,
   .section_body,

@@ -91,6 +91,8 @@ const Contact = () => {
               name="message"
               id="message"
               value={message}
+              cols={20}
+              rows={5}
               placeholder="Enter your message here..."
               className={styles.textbox}
               onChange={(e) => setMessage(e.target.value)}

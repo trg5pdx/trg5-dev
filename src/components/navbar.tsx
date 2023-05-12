@@ -23,40 +23,40 @@ const Navbar = () => {
           <MenuIcon fontSize="large" />
         </button>
         <ul
-          className={styles.nav_container + (navbarOpen ? ' flex' : ' hidden')}
+          className={styles.nav_container + (navbarOpen ? ' flex justify-between' : ' hidden')}
         >
-          <li>
-            <Link href="/" className={styles.navbar_button}>
+          <li className={styles.navbar_button_container}>
+            <Link href="/" className={styles.navbar_button} onClick={() => setNavbarOpen(!navbarOpen)}>
               Home
             </Link>
           </li>
-          <li>
-            <Link href="/#about" className={styles.navbar_button}>
+          <li className={styles.navbar_button_container}>
+            <Link href="/#about" className={styles.navbar_button} onClick={() => setNavbarOpen(!navbarOpen)}>
               About
             </Link>
           </li>
-          <li>
-            <Link href="/#skills" className={styles.navbar_button}>
+          <li className={styles.navbar_button_container}>
+            <Link href="/#skills" className={styles.navbar_button} onClick={() => setNavbarOpen(!navbarOpen)}>
               Skills
             </Link>
           </li>
-          <li>
-            <Link href="/#school" className={styles.navbar_button}>
+          <li className={styles.navbar_button_container}>
+            <Link href="/#school" className={styles.navbar_button} onClick={() => setNavbarOpen(!navbarOpen)}>
               School
             </Link>
           </li>
-          <li>
-            <Link href="/#work" className={styles.navbar_button}>
+          <li className={styles.navbar_button_container}>
+            <Link href="/#work" className={styles.navbar_button} onClick={() => setNavbarOpen(!navbarOpen)}>
               Work
             </Link>
           </li>
-          <li>
-            <Link href="/#projects" className={styles.navbar_button}>
+          <li className={styles.navbar_button_container}>
+            <Link href="/#projects" className={styles.navbar_button} onClick={() => setNavbarOpen(!navbarOpen)}>
               Projects
             </Link>
           </li>
-          <li>
-            <Link href="/#contact" className={styles.navbar_button}>
+          <li className={styles.navbar_button_container}>
+            <Link href="/#contact" className={styles.navbar_button} onClick={() => setNavbarOpen(!navbarOpen)}>
               Contact
             </Link>
           </li>
