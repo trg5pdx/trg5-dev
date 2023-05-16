@@ -5,29 +5,29 @@
 }
 
 .navbar {
-  @apply sticky top-0 flex flex-col flex-wrap justify-start backdrop-blur-lg py-2 z-20;
+  @apply sticky top-0 z-20 flex flex-col flex-wrap justify-start py-2 backdrop-blur-lg;
 }
 
 .nav_container {
-  @apply flex-grow list-none flex-col flex-wrap lg:justify-center lg:flex-row lg:flex justify-evenly;
+  @apply flex-grow list-none flex-col flex-wrap justify-evenly lg:flex lg:flex-row lg:justify-center;
 }
 
 .navbar_button_container {
-  @apply my-2 lg:mx-8 mx-4;
+  @apply mx-4 my-2 lg:mx-8;
 }
 
 .navbar_button {
-  @apply text-xl font-bold text-purple-800 hover:text-pink-500 rounded-xl px-4 py-1 bg-neutral-300;
+  @apply rounded-xl px-4 py-1 text-xl font-bold hover:text-pink-500;
 }
 
 .main_title {
   width: fit-content;
-  @apply rounded bg-neutral-300 p-2 text-5xl font-bold text-purple-600;
+  @apply rounded p-2 text-5xl font-bold text-purple-600;
 }
 
 .main_subtitle {
   width: fit-content;
-  @apply rounded bg-neutral-300 p-2 text-2xl font-bold;
+  @apply rounded p-2 text-2xl font-bold;
 }
 
 .section {
@@ -35,16 +35,23 @@
 }
 
 .section_title {
-  @apply mx-2 my-3 w-fit rounded bg-neutral-300 p-2 text-3xl font-bold 
+  @apply mx-2 my-3 w-fit rounded p-2 text-3xl font-bold 
   text-purple-600;
 }
 
 .section_body {
-  @apply mx-2 rounded bg-neutral-300 p-6 text-lg;
+  @apply mx-2 rounded bg-neutral-300 p-6 text-lg dark:bg-neutral-800;
+}
+
+.section_title,
+.main_subtitle,
+.main_title,
+.navbar_button {
+  @apply bg-neutral-300 text-purple-800 dark:bg-neutral-800 dark:text-purple-300;
 }
 
 .card_format {
-  @apply h-60 z-10;
+  @apply z-10 h-60;
 }
 
 .card_style {
@@ -96,20 +103,8 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .navbar_button {
-    @apply text-purple-600 hover:text-pink-600;
-  }
-
   .textbox {
     @apply border-neutral-700 bg-neutral-900;
-  }
-
-  .navbar_button, 
-  .main_title,
-  .main_subtitle,
-  .section_body,
-  .section_title {
-    @apply bg-neutral-800;
   }
 
   .modal {

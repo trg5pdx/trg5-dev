@@ -16,11 +16,6 @@ const Project = () => {
     1200: { items: 3, itemsFit: 'contain' },
   };
 
-  /* 
-    Using index since the list I'm building is static
-    Source: 
-    https://adhithiravi.medium.com/why-do-i-need-keys-in-react-lists-dbb522188bbb 
-  */
   const project_list = data.projects.map((projData, index) => (
     <Card key={index} variant="outlined" className={styles.card_style}>
       <CardContent className={styles.card_format}>

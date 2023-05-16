@@ -18,10 +18,6 @@ const Contact = () => {
       return;
     }
 
-    /* 
-      Used the article below for sending emails:
-      https://dev.to/daliboru/how-to-send-emails-from-a-form-in-react-emailjs-27d1 
-    */
     send(
       service_id,
       template_id,
@@ -84,7 +80,7 @@ const Contact = () => {
             />
           </div>
           <div className="col-span-2 my-2">
-            <label htmlFor="email" className="hidden">
+            <label htmlFor="message" className="hidden">
               Message:
             </label>
             <textarea

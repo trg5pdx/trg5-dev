@@ -8,8 +8,8 @@ const footer = () => {
       <br />
       Developed using NextJS and React
       <br />
-      {"Resources used: "}
-      <Link href="/citations">click here</Link>
+      {'Resources used: '}
+      <Link href="/citations">citations</Link>
     </footer>
   );
 };
