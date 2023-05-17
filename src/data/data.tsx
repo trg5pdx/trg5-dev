@@ -256,7 +256,7 @@ export const data = {
         `,
       ],
       repo: 'https://github.com/trg5pdx/personal-website',
-      otherTitle: 'Live Link: ',
+      otherTitle: 'Live Link',
       other: 'https://trg5pdx.github.io/personal-website/',
     },
     {

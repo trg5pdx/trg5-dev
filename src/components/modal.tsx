@@ -60,7 +60,7 @@ const ProjectModal = ({
           ))}
           {projData.repo != '' && (
             <>
-              Repo:
+              {'Repo: '}
               <Link href={projData.repo}>click here</Link>
             </>
           )}

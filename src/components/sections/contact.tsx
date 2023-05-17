@@ -64,6 +64,7 @@ const Contact = () => {
               id="name"
               value={name}
               placeholder="Name"
+              required={true}
               className={styles.textbox}
               onChange={(e) => setName(e.target.value)}
             />
@@ -78,6 +79,7 @@ const Contact = () => {
               id="email"
               value={email}
               placeholder="Email"
+              required={true}
               className={styles.textbox}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -93,6 +95,7 @@ const Contact = () => {
               cols={20}
               rows={5}
               placeholder="Enter your message here..."
+              required={true}
               className={styles.textbox}
               onChange={(e) => setMessage(e.target.value)}
             />

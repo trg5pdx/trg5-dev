@@ -3,38 +3,45 @@ import { data } from '../../data/data';
 import ProjectModal from '../modal';
 import { useState } from 'react';
 import { Button, Card, CardActions, CardContent } from '@mui/material';
-import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { StyledEngineProvider } from '@mui/material/styles';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
+/* 
+  Fixed MUI style override with the cards using:
+  https://stackoverflow.com/questions/73731487/css-module-classes-work-on-development-but-are-overridden-on-production
+*/
 
 const Project = () => {
   const [projModal, toggleModal] = useState(false);
   const [projIndex, projIndexState] = useState(0);
 
   const project_list = data.projects.map((projData, index) => (
-    <SwiperSlide key={index}>
-      <Card variant="outlined" className={styles.card_style}>
-        <CardContent className={styles.card_format}>
-          <h2 className={styles.proj_title}>{projData.title}</h2>
-          <br />
-          <p className={styles.card_desc}>{projData.desc}</p>
-        </CardContent>
-        <CardActions>
-          <Button
-            size="medium"
-            className={styles.card_button}
-            onClick={() => {
-              projIndexState(index);
-              toggleModal(true);
-            }}
-          >
-            Learn more
-          </Button>
-        </CardActions>
-      </Card>
-    </SwiperSlide>
+    <StyledEngineProvider injectFirst key={index}>
+      <SwiperSlide tag="li">
+        <Card variant="outlined" className={styles.card_style}>
+          <CardContent className={styles.card_format}>
+            <h2 className={styles.proj_title}>{projData.title}</h2>
+            <br />
+            <p className={styles.card_desc}>{projData.desc}</p>
+          </CardContent>
+          <CardActions>
+            <Button
+              size="medium"
+              className={styles.card_button}
+              onClick={() => {
+                projIndexState(index);
+                toggleModal(true);
+              }}
+            >
+              Learn more
+            </Button>
+          </CardActions>
+        </Card>
+      </SwiperSlide>
+    </StyledEngineProvider>
   ));
 
   return (
@@ -50,7 +57,8 @@ const Project = () => {
           slidesPerView={1}
           centeredSlides={true}
           spaceBetween={10}
-          modules={[Pagination]}
+          modules={[]}
+          wrapperTag="ul"
           breakpoints={{
             768: {
               slidesPerView: 2,
