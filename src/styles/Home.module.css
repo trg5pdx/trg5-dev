@@ -55,7 +55,7 @@
 }
 
 .card_style {
-  @apply mx-2 bg-neutral-100 text-neutral-900;
+  @apply mx-2 bg-neutral-100 text-neutral-900 dark:bg-neutral-900 dark:text-white;
 }
 
 .card_desc {
@@ -68,7 +68,7 @@
 }
 
 .card_button {
-  @apply justify-self-end font-bold text-neutral-900;
+  @apply justify-self-end font-bold text-neutral-900 dark:text-neutral-200;
 }
 
 .proj_title {
@@ -81,12 +81,12 @@
 
 .modal {
   @apply absolute left-1/2 top-1/2 z-50 h-5/6 w-full translate-x-[-50%] translate-y-[-50%]
-    rounded-xl border-solid border-gray-400 bg-gray-300 p-8 
+    rounded-xl border-solid border-gray-400 bg-gray-300 p-8 dark:bg-neutral-900 
     lg:h-auto lg:min-h-fit lg:max-w-[900px];
 }
 
 .footer {
-  @apply my-10 text-center text-gray-900;
+  @apply my-10 text-center text-gray-900 dark:text-gray-400;
 }
 
 .list_format {
@@ -99,29 +99,10 @@
 
 .textbox {
   @apply w-full rounded-md border-[2px] border-neutral-300 bg-neutral-100 px-2 
-  text-black;
+  text-black dark:border-neutral-700 dark:bg-neutral-900;
 }
 
 @media (prefers-color-scheme: dark) {
-  .textbox {
-    @apply border-neutral-700 bg-neutral-900;
-  }
-
-  .modal {
-    @apply bg-neutral-900;
-  }
-
-  .footer {
-    @apply text-gray-400;
-  }
-
-  .card_style {
-    @apply bg-neutral-900 text-white;
-  }
-
-  .card_button {
-    @apply text-neutral-200;
-  }
   .card_desc {
     background-image: linear-gradient(to bottom, white 50%, transparent);
   }
