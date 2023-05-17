@@ -1,6 +1,9 @@
 import styles from '@/styles/Home.module.css';
 import { useState } from 'react';
 import { send } from '@emailjs/browser';
+import Link from 'next/link';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -96,13 +99,35 @@ const Contact = () => {
             <br />
             <br />
           </div>
-          <button
-            type="submit"
-            className="col-span-2 h-14 w-full rounded bg-slate-200 font-bold text-black lg:col-span-1"
-          >
-            Submit
-          </button>
+          <div className="col-span-2 lg:col-span-1 lg:mr-2">
+            <button
+              type="submit"
+              className="h-14 w-full rounded bg-slate-200 font-bold text-black"
+            >
+              Submit
+            </button>
+          </div>
         </form>
+        <br />
+        {`You can also find me on Github and LinkedIn!`}
+        <div className="grid grid-cols-2">
+          <div className="mr-2">
+            <Link href="https://github.com/trg5pdx/">
+              <button className="h-14 w-full rounded bg-slate-200 font-bold text-black">
+                <GitHubIcon />
+                Github
+              </button>
+            </Link>
+          </div>
+          <div className="ml-2">
+            <Link href="https://www.linkedin.com/in/trg5/">
+              <button className="h-14 w-full rounded bg-slate-200 font-bold text-black">
+                <LinkedInIcon />
+                LinkedIn
+              </button>
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );

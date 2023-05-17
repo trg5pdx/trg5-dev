@@ -1,26 +1,26 @@
 export const data = {
   about: [
     /* HTML */ `
-    Hello, I'm a software developer from Portland, Oregon, and a Portland
-    State University Alumnus. I studied Computer Science there, and I love
-    to program computers. In my personal life, along with programming hobby 
-    projects I like to play video games, clean/repair electronics, and work 
-    on mechanical keyboards. I've dabbled with QMK (software that lets you 
-    program buttons on a supported keybaord) in the past and got into 
-    soldering due to my interest in keyboards.
+      Hello, I'm a software developer from Portland, Oregon, and a Portland
+      State University Alumnus. I studied Computer Science there, and I love to
+      program computers. In my personal life, along with programming hobby
+      projects I like to play video games, clean/repair electronics, and work on
+      mechanical keyboards. I've dabbled with QMK (software that lets you
+      program buttons on a supported keyboard) in the past and got into
+      soldering due to my interest in keyboards.
     `,
     /* HTML */ `
-    Along with studying Computer Science at Portland State, I also took
-    multiple history classes covering a wide range of topics, from indigenous
-    history in the Americas, to medieval European history, to African history
-    before the 19th century. If I wasn't a Computer Scientist, I think I would've
-    been a history major. These classes are very important to me, as I think
-    they've helped me understand the world better, and they helped me do better
-    academically. I became a better writer, learned to really pay attention to 
-    details like the authors and their background, dates and era a piece was
-    written in. They also helped me with citing sources, which has translated
-    over to my work in CS by making notes on where I got solutions or ideas
-    from if I looked something up online. 
+      Along with studying Computer Science at Portland State, I also took
+      multiple history classes covering a wide range of topics, from indigenous
+      history in the Americas, to medieval European history, to African history
+      before the 19th century. If I wasn't a Computer Scientist, I think I
+      would've been a history major. These classes are very important to me, as
+      I think they've helped me understand the world better, and they helped me
+      do better academically. I became a better writer, learned to really pay
+      attention to details like the authors and their background, dates and era
+      a piece was written in. They also helped me with citing sources, which has
+      translated over to my work in CS by making notes on where I got solutions
+      or ideas from if I looked something up online.
     `,
   ],
   skills: [
@@ -84,7 +84,7 @@ export const data = {
             'Worked as a Frontend developer on a team of 10 people and 2 team leads',
             'Developed a frontend using React.js and Vite',
             'Used the SigmaJS and Graphology libraries to draw nodes and edges',
-            'Users can create, delete, and edit nodes/edges on the graph'
+            'Users can create, delete, and edit nodes/edges on the graph',
           ],
         },
       ],

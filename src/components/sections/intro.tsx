@@ -1,6 +1,6 @@
 import styles from '@/styles/Home.module.css';
 import Spline from '@splinetool/react-spline';
-import FrontImage from '../../../assets/CoastRange.jpg';
+import FrontImage from '../../../assets/MeAndMyDog.jpg';
 import Image from 'next/image';
 
 const intro = () => {
@@ -19,10 +19,10 @@ const intro = () => {
   />*/}
       <Image
         src={FrontImage}
-        alt="Some hills in the oregon coast range, with grass in front of them"
+        alt="A picture of me with my dog Dulcita"
         className="h-11/12 col-span-6 mx-2 w-11/12 rounded lg:col-span-3 lg:mx-0 lg:h-full lg:w-full"
-        width={1662}
-        height={997}
+        width={977}
+        height={772}
       />
     </>
   );
