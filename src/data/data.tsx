@@ -113,6 +113,15 @@ export const data = {
       section: [
         {
           item: 'Office Assistant @ Upward Bound ETS: Sep 2019 - Mar 2023',
+          subitems: [
+            /* HTML */ `Managed student database, and brought up errors with
+            student applications, and returned apps that were missing vital info`,
+            /* HTML */ `Marked students that participated in events hosted by
+            staff so they could keep track of student participation and ensure
+            they were meeting with the counselors regularly`,
+            /* HTML */ `Managed technological inventory (laptops, cameras, etc.)
+            and handled logistics of lending equipment`,
+          ],
         },
       ],
     },
@@ -120,6 +129,11 @@ export const data = {
       section: [
         {
           item: 'Tutor @ Upward Bound ETS: Sep 2017 - Jun 2019',
+          subitems: [
+            'Tutored high school students in mathematics and history',
+            `Proofread essays for students writing for both their classes and 
+            for scholarships`,
+          ],
         },
       ],
     },
@@ -216,6 +230,34 @@ export const data = {
         `,
       ],
       repo: 'https://github.com/trg5pdx/civlike',
+    },
+    {
+      title: 'Personal Website',
+      desc: [
+        /* HTML */
+        `
+          This website was a project for my intro to web development class. It
+          was meant to have us showcase what we learned during the course, which
+          includes HTML, CSS, Bootstrap, Javascript, and jQuery. We had to have
+          a navbar, and have a section dedicated to talking about ourselves, a
+          previous work section which would include work experience and possibly
+          a resume, a section for projects we wanted to showcase, and a contact
+          section. We also had to deploy the website using some hosting service
+          like what github offers, and we had to keep a journal about the
+          development process. For the contact section, we weren’t required to
+          set up a system for sending the data entered by users, but we could if
+          we wanted to.
+        `,
+        /* HTML */
+        `
+          I updated the site a few times since taking the class just to add more
+          up to date projects, but I don't plan to update it further as this
+          current site replaces it.
+        `,
+      ],
+      repo: 'https://github.com/trg5pdx/personal-website',
+      otherTitle: 'Live Link: ',
+      other: 'https://trg5pdx.github.io/personal-website/',
     },
     {
       title: 'Xv6',

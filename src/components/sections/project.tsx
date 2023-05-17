@@ -10,7 +10,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const Project = () => {
-  const [swiperRef, setSwiperRef] = useState(null);
   const [projModal, toggleModal] = useState(false);
   const [projIndex, projIndexState] = useState(0);
 
@@ -48,13 +47,9 @@ const Project = () => {
           projIndex={projIndex}
         />
         <Swiper
-          onSwiper={setSwiperRef}
           slidesPerView={1}
           centeredSlides={true}
           spaceBetween={10}
-          pagination={{
-            clickable: true,
-          }}
           modules={[Pagination]}
           breakpoints={{
             768: {
@@ -65,10 +60,6 @@ const Project = () => {
               slidesPerView: 3,
               spaceBetween: 30,
             },
-          }}
-          style={{
-            '--swiper-navigation-size': '25px',
-            marginLeft: '2px',
           }}
         >
           {project_list}

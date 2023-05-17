@@ -53,6 +53,16 @@ const citations = () => {
               </li>
               <li className="p-2">
                 {
+                  /* HTML */ `
+                    Used this for getting breakpoints to work with swiper
+                  `
+                }
+                <Link href="https://dev.to/timo_ernst/how-to-set-responsive-breakpoints-in-swiper-react-3bf6">
+                  dev.to/timo_ernst/
+                </Link>
+              </li>
+              <li className="p-2">
+                {
                   /* HTML */ `Used the example react portfolios below to help me
                   get started with developing this website, and give me ideas
                   for what I could do. I want to point out paytonjewell's
@@ -63,11 +73,11 @@ const citations = () => {
                 {'Links: '}
                 <br />
                 <Link href="https://github.com/paytonjewell/ReactPortfolioTemplate">
-                  PaytonJewell's portfolio template
+                  {"PaytonJewell's portfolio template"}
                 </Link>
                 <br />
                 <Link href="https://reactjsexample.com/tag/portfolio-page/">
-                  React Portfolio Examples page
+                  {'React Portfolio Examples page'}
                 </Link>
               </li>
             </ul>
