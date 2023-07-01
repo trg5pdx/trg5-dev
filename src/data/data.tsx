@@ -143,28 +143,28 @@ export const data = {
       title: 'Blurp',
       desc: [
         /* HTML */ `
-          Blurp was a capstone project I worked on with 2 team leads, and a team
-          of 10 people. It was a project for building an app that allows for
-          users to map out their relationships to people, places, and ideas.
-          This was meant as a tool for therapists to send to their patients
-          before a session to help understand patients better. For this project,
-          we went for a simplistic design, as the tools that already existed for
-          this were specialized and inaccessible to most users, both being in
-          terms of cost, and in terms of usability. I worked on the frontend
-          portion of this app, which we used React, SigmaJS, and Graphology to
-          make the app work. I worked on sending and retrieving data from the
-          database, worked on different GUI components like the modal that
-          appears upon loading in, and worked on getting the data associated
-          with a node or relationship to be loaded into a form in the app that
-          the user could edit and then save back to the node. Overall, the
-          project was very interesting to work with, as it had me think about
-          how users were going to be interacting with our software, and it had
-          me learn a lot of new skills while working on it.
+          Blurp was a capstone project I worked on with a team of 10, with two
+          team leads. It was a project for building an app that allows for users
+          to map out their relationships to people, places, and ideas. This was
+          meant as a tool for therapists to send to their patients before a
+          session to help understand patients better. For this project, we went
+          for a simplistic design, as the tools that already existed for this
+          were specialized and inaccessible to most users, both being in terms
+          of cost, and in terms of usability. I worked on the frontend portion
+          of this app, which we used React, SigmaJS, and Graphology to make the
+          app work. I worked on sending and retrieving data from the database,
+          worked on different GUI components like the modal that appears upon
+          loading in, and worked on getting the data associated with a node or
+          relationship to be loaded into a form in the app that the user could
+          edit and then save back to the node. Overall, the project was very
+          interesting to work with, as it had me think about how users were
+          going to be interacting with our software, and it had me learn a lot
+          of new skills while working on it.
         `,
       ],
       repo: 'https://github.com/pdx-blurp/blurp-frontend',
-      otherTitle: 'Project Links',
-      other: 'https://github.com/pdx-blurp',
+      otherTitle: 'Blurp webapp',
+      other: 'https://blurp-pdx.netlify.app/',
     },
     {
       title: 'Haskell Webserver',

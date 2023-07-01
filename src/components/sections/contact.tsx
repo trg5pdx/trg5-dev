@@ -103,10 +103,7 @@ const Contact = () => {
             <br />
           </div>
           <div className="col-span-2 lg:col-span-1 lg:mr-2">
-            <button
-              type="submit"
-              className="h-14 w-full rounded bg-slate-200 font-bold text-black"
-            >
+            <button type="submit" className={styles.contact_button}>
               Submit
             </button>
           </div>
@@ -116,7 +113,7 @@ const Contact = () => {
         <div className="grid grid-cols-2">
           <div className="mr-2">
             <Link href="https://github.com/trg5pdx/">
-              <button className="h-14 w-full rounded bg-slate-200 font-bold text-black">
+              <button className={styles.contact_button}>
                 <GitHubIcon />
                 Github
               </button>
@@ -124,7 +121,7 @@ const Contact = () => {
           </div>
           <div className="ml-2">
             <Link href="https://www.linkedin.com/in/trg5/">
-              <button className="h-14 w-full rounded bg-slate-200 font-bold text-black">
+              <button className={styles.contact_button}>
                 <LinkedInIcon />
                 LinkedIn
               </button>

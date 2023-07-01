@@ -10,6 +10,9 @@ const footer = () => {
       <br />
       {'Resources used: '}
       <Link href="/citations">citations</Link>
+      <br />
+      {'Source code for this website: '}
+      <Link href="https://github.com/trg5pdx/trg5-dev">Github</Link>
     </footer>
   );
 };

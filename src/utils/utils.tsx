@@ -12,9 +12,9 @@ export const gen_list = (
         <li key={index}>
           {section.item}
           {section.subitems && (
-            <ul className="mt-2 list-inside list-[circle] space-y-1 pl-5">
-              {section.subitems.map((subitem, index) => (
-                <li key={index}>{subitem}</li>
+            <ul className="mt-2 list-inside list-[circle] space-y-1 px-6">
+              {section.subitems.map((subitem, subindex) => (
+                <li key={subindex}>{subitem}</li>
               ))}
             </ul>
           )}

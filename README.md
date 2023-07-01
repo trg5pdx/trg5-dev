@@ -1,3 +1,10 @@
+## trg5.dev
+
+This is the repo for my personal website, written using nextJS, react, and
+TailwindCSS. For the list of resources I used to develop my site, you can look
+at either the citations page on the live website, or scroll to the bottom of
+this readme to see it.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -16,23 +23,28 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Citations
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Here are the resources I used for developing this site
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+For navigation, I used this resource for building a navigation bar with TailwindCSS.  
+[creative-tim.com](https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/navbars)
 
-## Learn More
+For setting up sending emails from a form, I used the resource below for
+getting that working.  
+[dev.to/daliboru](https://dev.to/daliboru/how-to-send-emails-from-a-form-in-react-emailjs-27d1)
 
-To learn more about Next.js, take a look at the following resources:
+For generating the cards for the projects section, I followed the link below
+for understanding the basics for mapping, and I chose to set it up to use a
+static index since thats something I didn't plan to have change dynamically.  
+[adhithiravi.medium.com](https://adhithiravi.medium.com/why-do-i-need-keys-in-react-lists-dbb522188bbb)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Used this for getting breakpoints to work with swiper  
+[dev.to/timo_ernst](https://dev.to/timo_ernst/how-to-set-responsive-breakpoints-in-swiper-react-3bf6)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Used the example react portfolios below to help me get started with developing
+this website, and give me ideas for what I could do. I want to point out
+paytonjewell's specifically since I took a look at that one for inspiration on
+how to handle the data in my website.  
+[PaytonJewell's portfolio template](https://github.com/paytonjewell/ReactPortfolioTemplate)  
+[React portfolio examples page](https://reactjsexample.com/tag/portfolio-page/)

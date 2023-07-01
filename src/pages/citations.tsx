@@ -77,7 +77,7 @@ const citations = () => {
                 </Link>
                 <br />
                 <Link href="https://reactjsexample.com/tag/portfolio-page/">
-                  {'React Portfolio Examples page'}
+                  {'React portfolio examples page'}
                 </Link>
               </li>
             </ul>

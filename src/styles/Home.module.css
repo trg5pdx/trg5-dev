@@ -98,8 +98,16 @@
 }
 
 .textbox {
-  @apply w-full rounded-md border-[2px] border-neutral-300 bg-neutral-100 px-2 
-  text-black dark:border-neutral-700 dark:bg-neutral-900 dark:text-white;
+  @apply w-full rounded-md border-[2px] border-neutral-300 bg-neutral-100 px-2
+  text-black placeholder:text-slate-600 dark:border-neutral-700 dark:bg-neutral-900 
+  dark:text-white dark:placeholder:text-slate-300;
+}
+
+.contact_button {
+  @apply h-14 w-full rounded bg-neutral-800 font-bold text-white 
+  hover:bg-slate-200 hover:border-2 hover:border-neutral-800 hover:text-black
+  dark:bg-slate-200 dark:text-black dark:hover:bg-neutral-800 
+  dark:hover:border-slate-200 dark:hover:text-white;
 }
 
 @media (prefers-color-scheme: dark) {

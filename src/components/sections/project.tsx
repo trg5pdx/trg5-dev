@@ -19,8 +19,8 @@ const Project = () => {
   const [projIndex, projIndexState] = useState(0);
 
   const project_list = data.projects.map((projData, index) => (
-    <StyledEngineProvider injectFirst key={index}>
-      <SwiperSlide tag="li">
+    <SwiperSlide tag="li" key={index}>
+      <StyledEngineProvider injectFirst>
         <Card variant="outlined" className={styles.card_style}>
           <CardContent className={styles.card_format}>
             <h2 className={styles.proj_title}>{projData.title}</h2>
@@ -40,14 +40,14 @@ const Project = () => {
             </Button>
           </CardActions>
         </Card>
-      </SwiperSlide>
-    </StyledEngineProvider>
+      </StyledEngineProvider>
+    </SwiperSlide>
   ));
 
   return (
     <section className={styles.section} id="projects">
       <h2 className={styles.section_title}>{"Projects I've worked on"}</h2>
-      <div className="mx-0 rounded bg-neutral-300 p-6 text-lg dark:bg-neutral-800">
+      <div className={styles.section_body}>
         <ProjectModal
           modal={projModal}
           modalState={(val: boolean) => toggleModal(val)}
