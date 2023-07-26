@@ -1,6 +1,5 @@
-import styles from '@/styles/Home.module.css';
 import Spline from '@splinetool/react-spline';
-import FrontImage from '../../../assets/MeAndMyDog.jpg';
+import FrontImage from '../../../assets/MeAndMyDog.webp';
 import Image from 'next/image';
 
 const intro = () => {
@@ -41,6 +40,7 @@ const intro = () => {
           'h-11/12 col-span-6 mx-2 w-11/12 rounded lg:col-span-3 ' +
           'lg:mx-0 lg:h-full lg:w-full'
         }
+        priority={true}
         width={977}
         height={772}
       />

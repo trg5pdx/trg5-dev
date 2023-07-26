@@ -4,7 +4,7 @@ import Link from 'next/link';
 import MenuIcon from '@mui/icons-material/Menu';
 import NavButton from './navbutton';
 
-const Navbar = () => {
+const NavBar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
@@ -40,4 +40,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;

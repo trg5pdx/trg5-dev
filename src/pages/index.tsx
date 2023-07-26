@@ -2,10 +2,7 @@ import Head from 'next/head';
 import styles from '@/styles/Home.module.css';
 import Navbar from '../components/navbar';
 import Intro from '../components/sections/intro';
-import About from '../components/sections/about';
-import Skills from '../components/sections/skills';
-import School from '../components/sections/school';
-import Work from '../components/sections/work';
+import Section from '../components/section';
 import Project from '../components/sections/project';
 import Contact from '../components/sections/contact';
 import Footer from '../components/footer';
@@ -22,10 +19,10 @@ export default function Home() {
       <Navbar />
       <main className={styles.main}>
         <Intro />
-        <About />
-        <Skills />
-        <School />
-        <Work />
+        <Section anchor="about" title="About Me" />
+        <Section anchor="skills" title="Skills" />
+        <Section anchor="school" title="Education" />
+        <Section anchor="work" title="Work History" />
         <Project />
         <Contact />
       </main>
