@@ -4,58 +4,17 @@
   @apply mx-2 h-full grid-cols-6 justify-items-center scroll-smooth lg:mx-10;
 }
 
-.navbar {
-  @apply sticky top-0 z-20 flex flex-col flex-wrap justify-start py-2 backdrop-blur-lg;
-}
-
-.nav_container {
-  @apply flex-grow list-none flex-col flex-wrap justify-evenly lg:flex lg:flex-row lg:justify-center;
-}
-
-.navbar_button_container {
-  @apply mx-4 my-2 lg:mx-8;
-}
-
-.navbar_button {
-  @apply rounded-xl px-4 py-1 text-xl font-bold hover:text-pink-500;
-}
-
-.main_title {
-  width: fit-content;
-  @apply rounded p-2 text-5xl font-bold text-purple-600;
-}
-
-.main_subtitle {
-  width: fit-content;
-  @apply rounded p-2 text-2xl font-bold;
-}
-
 .section {
   @apply col-span-6 w-11/12 justify-self-center py-8 lg:w-4/5;
 }
 
 .section_title {
-  @apply mx-2 my-3 w-fit rounded p-2 text-3xl font-bold 
-  text-purple-600;
+  @apply mx-2 my-3 w-fit rounded p-2 text-3xl font-bold bg-neutral-300 
+    text-purple-800 dark:bg-neutral-800 dark:text-purple-300;
 }
 
 .section_body {
   @apply mx-2 rounded bg-neutral-300 p-6 text-lg dark:bg-neutral-800;
-}
-
-.section_title,
-.main_subtitle,
-.main_title,
-.navbar_button {
-  @apply bg-neutral-300 text-purple-800 dark:bg-neutral-800 dark:text-purple-300;
-}
-
-.card_format {
-  @apply z-10 h-60;
-}
-
-.card_style {
-  @apply mx-2 bg-neutral-100 text-neutral-900 dark:bg-neutral-900 dark:text-white;
 }
 
 .card_desc {
@@ -67,26 +26,11 @@
   @apply h-5/6 text-lg;
 }
 
-.card_button {
-  @apply justify-self-end font-bold text-neutral-900 dark:text-neutral-200;
-}
-
-.proj_title {
-  @apply justify-self-start text-2xl font-bold;
-}
-
-.proj_desc {
-  @apply h-5/6 overflow-scroll text-lg lg:max-h-[600px];
-}
-
-.modal {
-  @apply absolute left-1/2 top-1/2 z-50 h-5/6 w-full translate-x-[-50%] translate-y-[-50%]
-    rounded-xl border-solid border-gray-400 bg-gray-300 p-8 dark:bg-neutral-900 
-    lg:h-auto lg:min-h-fit lg:max-w-[900px];
-}
-
-.footer {
-  @apply my-10 text-center text-gray-900 dark:text-gray-400;
+/* Come back to this, I think this is messy and could be done better */
+.proj_button {
+  @apply w-fit h-12 bg-purple-600 text-white mr-6 rounded p-2 border-purple-600 border-2
+    hover:bg-slate-200 hover:text-purple-600 dark:hover:bg-pink-500 dark:hover:text-white 
+    dark:hover:border-pink-500 transition-all duration-500;
 }
 
 .list_format {
@@ -104,10 +48,11 @@
 }
 
 .contact_button {
-  @apply h-14 w-full rounded bg-neutral-800 font-bold text-white 
-  hover:bg-slate-200 hover:border-2 hover:border-neutral-800 hover:text-black
-  dark:bg-slate-200 dark:text-black dark:hover:bg-neutral-800 
-  dark:hover:border-slate-200 dark:hover:text-white;
+  @apply h-14 w-full rounded bg-purple-950 font-bold text-white text-xl 
+  hover:bg-slate-200 hover:border-2 hover:border-purple-950 hover:text-purple-950
+  dark:bg-purple-400 dark:text-black dark:hover:bg-neutral-800 
+  dark:hover:border-pink-300 dark:hover:text-pink-300 hover:transition-all 
+  hover:duration-300;
 }
 
 @media (prefers-color-scheme: dark) {

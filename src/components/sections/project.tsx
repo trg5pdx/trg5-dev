@@ -21,16 +21,21 @@ const Project = () => {
   const project_list = data.projects.map((projData, index) => (
     <SwiperSlide tag="li" key={index}>
       <StyledEngineProvider injectFirst>
-        <Card variant="outlined" className={styles.card_style}>
-          <CardContent className={styles.card_format}>
-            <h2 className={styles.proj_title}>{projData.title}</h2>
+        <Card
+          variant="outlined"
+          className="mx-2 bg-neutral-100 text-neutral-900 dark:bg-neutral-900 dark:text-white"
+        >
+          <CardContent className="z-10 h-60">
+            <h2 className="justify-self-start text-2xl font-bold">
+              {projData.title}
+            </h2>
             <br />
             <p className={styles.card_desc}>{projData.desc}</p>
           </CardContent>
           <CardActions>
             <Button
               size="medium"
-              className={styles.card_button}
+              className="font-bold text-neutral-900 dark:text-neutral-200"
               onClick={() => {
                 projIndexState(index);
                 toggleModal(true);
