@@ -4,8 +4,12 @@ import { send } from '@emailjs/browser';
 import Link from 'next/link';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { notifData, EmailStatus } from '../../constants/constants';
 
-const Contact = () => {
+const Contact = (props: {
+  notifState: notifData;
+  setNotifState: (arg0: notifData) => void;
+}) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -32,16 +36,35 @@ const Contact = () => {
       },
       user_id
     )
-      .then((response) => {
-        console.log('SUCCESS', response.status, response.text);
+      .then((_response) => {
         setName('');
         setEmail('');
         setMessage('');
+        props.setNotifState(
+          new notifData(EmailStatus.Success, 'Email sent!', true)
+        );
       })
       .catch((err) => {
-        console.log('Failed...', err);
+        // Fix this later, want to put a message into the error popup for the user
+        console.log(err);
+        props.setNotifState(
+          new notifData(
+            EmailStatus.Failure,
+            'Failed to send email',
+            !props.notifState.isOpen
+          )
+        );
       });
   };
+
+  /* 
+  const testing = () => {
+    console.log('clicked');
+    props.setNotifState(
+      new notifData(EmailStatus.Success, 'test', !props.notifState.isOpen)
+    );
+  };
+  */
 
   return (
     <section className={styles.section} id="contact">
@@ -127,6 +150,9 @@ const Contact = () => {
               </button>
             </Link>
           </div>
+          {/* <button className={styles.contact_button} onClick={() => testing()}>
+            testing
+            </button> */}
         </div>
       </div>
     </section>

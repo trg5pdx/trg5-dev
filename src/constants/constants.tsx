@@ -1,4 +1,10 @@
-export default class ProjectData {
+export enum EmailStatus {
+  Success,
+  Failure,
+  None,
+}
+
+export class ProjectData {
   title: String;
   desc: String;
   repo: String;
@@ -31,5 +37,17 @@ export default class ProjectData {
       this.other = '';
       this.other_title = '';
     }
+  }
+}
+
+export class notifData {
+  status: EmailStatus;
+  message: string;
+  isOpen: boolean;
+
+  constructor(status: EmailStatus, message: string, isOpen: boolean) {
+    this.status = status;
+    this.message = message;
+    this.isOpen = isOpen;
   }
 }

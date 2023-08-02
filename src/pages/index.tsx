@@ -5,9 +5,18 @@ import Intro from '../components/sections/intro';
 import Section from '../components/section';
 import Project from '../components/sections/project';
 import Contact from '../components/sections/contact';
+import Notification from '../components/notification';
 import Footer from '../components/footer';
+import { notifData, EmailStatus } from '../constants/constants';
+import { useState } from 'react';
 
 export default function Home() {
+  const [notifState, setNotifState] = useState(
+    new notifData(EmailStatus.None, '', false)
+  );
+
+  const changeNotif = (newState: notifData) => setNotifState(newState);
+
   return (
     <>
       <Head>
@@ -24,7 +33,13 @@ export default function Home() {
         <Section anchor="school" title="Education" />
         <Section anchor="work" title="Work History" />
         <Project />
-        <Contact />
+        <Contact notifState={notifState} setNotifState={changeNotif} />
+        <Notification
+          status={notifState.status}
+          message={notifState.message}
+          isOpen={notifState.isOpen}
+          changeNotif={changeNotif}
+        />
       </main>
       <Footer />
     </>
