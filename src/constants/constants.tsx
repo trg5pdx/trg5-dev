@@ -1,3 +1,5 @@
+export const notificationTimer: number = 1000;
+
 export enum EmailStatus {
   Success,
   Failure,

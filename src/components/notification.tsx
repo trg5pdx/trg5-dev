@@ -14,7 +14,7 @@ const Notification = (props: {
 
   useEffect(() => {
     if (props.isOpen) {
-      let notifStyle = `fixed z-50 w-11/12 md:w-[50rem] h-fit md:h-12 top-3/4 
+      let notifStyle = `transition-opacity duration-300 fixed z-50 w-11/12 md:w-[50rem] h-fit md:h-12 top-3/4 
         left-1/2 translate-x-[-50%] overflow-none flex flex-cols p-2 rounded 
         drop-shadow-2xl`;
 
@@ -28,10 +28,16 @@ const Notification = (props: {
           setNotifIcon(<HighlightOffIcon />);
           break;
       }
+
+      setTimeout(() => {
+        setNotifIcon(<></>);
+        setNotifState('transition-opacity duration-300 hidden');
+        props.changeNotif(new notifData(EmailStatus.None, '', false));
+      }, 6000);
     } else {
-      setNotifState('hidden');
+      setNotifState('transition-opacity duration-300 hidden');
     }
-  }, [props.isOpen, props.status]);
+  }, [props]);
 
   const closeNotif = () => {
     setNotifIcon(<></>);

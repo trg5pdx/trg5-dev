@@ -20,11 +20,6 @@ const Contact = (props: {
     const template_id = process.env.NEXT_PUBLIC_TEMPLATE_ID || 'none';
     const user_id = process.env.NEXT_PUBLIC_USER_ID || 'none';
 
-    if (service_id == 'none' || template_id == 'none' || user_id == 'none') {
-      console.log('Failed to get emailJS IDs');
-      return;
-    }
-
     send(
       service_id,
       template_id,
@@ -45,32 +40,24 @@ const Contact = (props: {
         );
       })
       .catch((err) => {
-        // Fix this later, want to put a message into the error popup for the user
-        console.log(err);
+        // Done to prevent the user from seeing a link to the emailjs dashboard
+        let error_msg = err.text.split('.')[0];
         props.setNotifState(
           new notifData(
             EmailStatus.Failure,
-            'Failed to send email',
+            'Failed to send email: '.concat(error_msg),
             !props.notifState.isOpen
           )
         );
       });
   };
 
-  /* 
-  const testing = () => {
-    console.log('clicked');
-    props.setNotifState(
-      new notifData(EmailStatus.Success, 'test', !props.notifState.isOpen)
-    );
-  };
-  */
-
   return (
     <section className={styles.section} id="contact">
       <h2 className={styles.section_title}>Contact Me</h2>
       <div className={styles.section_body}>
-        {`Want to get in contact with me? Fill out the form below and I'll respond to you!`}
+        {`Want to get in contact with me? 
+          Fill out the form below and I'll respond to you!`}
         <br />
         <br />
         <form
@@ -133,8 +120,8 @@ const Contact = (props: {
         </form>
         <br />
         {`You can also find me on Github and LinkedIn!`}
-        <div className="grid grid-cols-2">
-          <div className="mr-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="lg:mr-2 my-2 lg:my-0">
             <Link href="https://github.com/trg5pdx/">
               <button className={styles.contact_button}>
                 <GitHubIcon />
@@ -142,7 +129,7 @@ const Contact = (props: {
               </button>
             </Link>
           </div>
-          <div className="ml-2">
+          <div className="lg:ml-2 my-2 lg:my-0">
             <Link href="https://www.linkedin.com/in/trg5/">
               <button className={styles.contact_button}>
                 <LinkedInIcon />
@@ -150,9 +137,22 @@ const Contact = (props: {
               </button>
             </Link>
           </div>
-          {/* <button className={styles.contact_button} onClick={() => testing()}>
-            testing
-            </button> */}
+          <div className="lg:mr-2 my-2">
+            <button
+              className={styles.contact_button}
+              onClick={() => {
+                props.setNotifState(
+                  new notifData(
+                    EmailStatus.Success,
+                    'test',
+                    !props.notifState.isOpen
+                  )
+                );
+              }}
+            >
+              testing
+            </button>
+          </div>
         </div>
       </div>
     </section>
