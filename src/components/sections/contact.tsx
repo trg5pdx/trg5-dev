@@ -1,61 +1,67 @@
-import styles from '@/styles/Home.module.css';
-import { useState } from 'react';
-import { send } from '@emailjs/browser';
-import Link from 'next/link';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import { notifData, EmailStatus } from '../../constants/constants';
+import styles from "@/styles/Home.module.css";
+import { useState } from "react";
+import { send } from "@emailjs/browser";
+import Link from "next/link";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { notifData, EmailStatus } from "../../constants/constants";
 
 const Contact = (props: {
   notifState: notifData;
   setNotifState: (arg0: notifData) => void;
 }) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.BaseSyntheticEvent) => {
     e.preventDefault();
-    const service_id = process.env.NEXT_PUBLIC_SERVICE_ID || 'none';
-    const template_id = process.env.NEXT_PUBLIC_TEMPLATE_ID || 'none';
-    const user_id = process.env.NEXT_PUBLIC_USER_ID || 'none';
+    const service_id = process.env.NEXT_PUBLIC_SERVICE_ID || "none";
+    const template_id = process.env.NEXT_PUBLIC_TEMPLATE_ID || "none";
+    const user_id = process.env.NEXT_PUBLIC_USER_ID || "none";
 
     send(
       service_id,
       template_id,
       {
         from_name: name,
-        to_name: 'trg5',
+        to_name: "trg5",
         message: message,
         reply_to: email,
       },
       user_id
     )
       .then((_response) => {
-        setName('');
-        setEmail('');
-        setMessage('');
+        setName("");
+        setEmail("");
+        setMessage("");
         props.setNotifState(
-          new notifData(EmailStatus.Success, 'Email sent!', true)
+          new notifData(EmailStatus.Success, "Email sent!", true)
         );
       })
       .catch((err) => {
         // Done to prevent the user from seeing a link to the emailjs dashboard
-        let error_msg = err.text.split('.')[0];
+        let error_msg = err.text.split(".")[0];
         props.setNotifState(
           new notifData(
             EmailStatus.Failure,
-            'Failed to send email: '.concat(error_msg),
+            "Failed to send email: ".concat(error_msg),
             !props.notifState.isOpen
           )
         );
       });
   };
-
+  
+  // Changed the classes in here from the home classes to inline so the theme toggle works
   return (
     <section className={styles.section} id="contact">
-      <h2 className={styles.section_title}>Contact Me</h2>
-      <div className={styles.section_body}>
+      <h2
+        className={`mx-2 my-3 w-fit rounded p-2 text-3xl font-bold bg-neutral-300 
+    text-purple-800 dark:bg-neutral-800 dark:text-purple-300`}
+      >
+        Contact Me
+    </h2>
+      <div className={'mx-2 rounded bg-neutral-300 p-6 text-lg dark:bg-neutral-800'}>
         {`Want to get in contact with me? 
           Fill out the form below and I'll respond to you!`}
         <br />
@@ -144,7 +150,7 @@ const Contact = (props: {
                 props.setNotifState(
                   new notifData(
                     EmailStatus.Success,
-                    'test',
+                    "test",
                     !props.notifState.isOpen
                   )
                 );

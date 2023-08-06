@@ -7,7 +7,7 @@ const NavButton = (props: {
   navState: (arg0: boolean) => void;
 }) => {
   return (
-    <li className="mx-4 my-2 lg:mx-8">
+    <li className="mx-4 m-2">
       <Link
         href={props.path}
         className={

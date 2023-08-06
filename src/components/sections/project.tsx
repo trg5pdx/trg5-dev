@@ -1,13 +1,12 @@
-import styles from '@/styles/Home.module.css';
-import { data } from '../../data/data';
-import ProjectModal from '../modal';
-import { useState } from 'react';
-import { Button, Card, CardActions, CardContent } from '@mui/material';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { StyledEngineProvider } from '@mui/material/styles';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import styles from "@/styles/Home.module.css";
+import { data } from "../../data/data";
+import ProjectModal from "../modal";
+import Card from "../card";
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 /* 
   Fixed MUI style override with the cards using:
@@ -20,39 +19,28 @@ const Project = () => {
 
   const project_list = data.projects.map((projData, index) => (
     <SwiperSlide tag="li" key={index}>
-      <StyledEngineProvider injectFirst>
-        <Card
-          variant="outlined"
-          className="mx-2 bg-neutral-100 text-neutral-900 dark:bg-neutral-900 dark:text-white"
-        >
-          <CardContent className="z-10 h-60">
-            <h2 className="justify-self-start text-2xl font-bold">
-              {projData.title}
-            </h2>
-            <br />
-            <p className={styles.card_desc}>{projData.desc}</p>
-          </CardContent>
-          <CardActions>
-            <Button
-              size="medium"
-              className="font-bold text-neutral-900 dark:text-neutral-200"
-              onClick={() => {
-                projIndexState(index);
-                toggleModal(true);
-              }}
-            >
-              Learn more
-            </Button>
-          </CardActions>
-        </Card>
-      </StyledEngineProvider>
+      <Card
+        title={projData.title}
+        desc={projData.desc}
+        index={index}
+        openModal={(arg0: number) => {
+          projIndexState(arg0);
+          toggleModal(true);
+        }}
+      />
     </SwiperSlide>
   ));
 
+  // Changed the classes in here from the home classes to inline so the theme toggle works
   return (
     <section className={styles.section} id="projects">
-      <h2 className={styles.section_title}>{"Projects I've worked on"}</h2>
-      <div className={styles.section_body}>
+      <h2
+        className={`mx-2 my-3 w-fit rounded p-2 text-3xl font-bold bg-neutral-300 
+    text-purple-800 dark:bg-neutral-800 dark:text-purple-300`}
+      >
+        {"Projects I've worked on"}
+      </h2>
+      <div className=" mx-2 p-6 text-lg rounded bg-neutral-300 dark:bg-neutral-800">
         <ProjectModal
           modal={projModal}
           modalState={(val: boolean) => toggleModal(val)}

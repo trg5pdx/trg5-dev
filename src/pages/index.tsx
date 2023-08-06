@@ -1,18 +1,18 @@
-import Head from 'next/head';
-import styles from '@/styles/Home.module.css';
-import Navbar from '../components/navbar';
-import Intro from '../components/sections/intro';
-import Section from '../components/section';
-import Project from '../components/sections/project';
-import Contact from '../components/sections/contact';
-import Notification from '../components/notification';
-import Footer from '../components/footer';
-import { notifData, EmailStatus } from '../constants/constants';
-import { useState } from 'react';
+import Head from "next/head";
+import styles from "@/styles/Home.module.css";
+import Navbar from "../components/navbar";
+import Intro from "../components/sections/intro";
+import Section from "../components/section";
+import Project from "../components/sections/project";
+import Contact from "../components/sections/contact";
+import Notification from "../components/notification";
+import Footer from "../components/footer";
+import { notifData, EmailStatus } from "../constants/constants";
+import { useState } from "react";
 
 export default function Home() {
   const [notifState, setNotifState] = useState(
-    new notifData(EmailStatus.None, '', false)
+    new notifData(EmailStatus.None, "", false)
   );
 
   const changeNotif = (newState: notifData) => setNotifState(newState);

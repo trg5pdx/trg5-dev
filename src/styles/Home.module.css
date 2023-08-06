@@ -1,7 +1,5 @@
 .main {
-  display: grid;
-  width: 96%;
-  @apply mx-2 h-full grid-cols-6 justify-items-center scroll-smooth lg:mx-10;
+  @apply mx-2 h-full w-[96%] grid grid-cols-6 justify-items-center scroll-smooth lg:mx-10;
 }
 
 .section {
@@ -18,12 +16,8 @@
 }
 
 .card_desc {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  background-image: linear-gradient(to bottom, black 50%, transparent);
-  background-clip: text;
-  color: transparent;
-  @apply h-5/6 text-lg;
+  @apply h-5/6 text-lg overflow-hidden text-ellipsis bg-clip-text text-transparent
+    bg-gradient-to-b from-black dark:from-white;
 }
 
 /* Come back to this, I think this is messy and could be done better */
