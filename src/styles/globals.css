@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  /* Did this as writing dark:from-white wouldn't work, and wouldn't show up
+   * in the dev console 
+   * */
+  .fade-text {
+    background-image: linear-gradient(to bottom, black 50%, transparent);
+  }
+
+  .dark .fade-text {
+    background-image: linear-gradient(to bottom, white 50%, transparent);
+  }
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -23,4 +36,3 @@ a {
   @apply text-blue-700 hover:text-blue-950 dark:text-cyan-600 
   dark:hover:text-cyan-300;
 }
-

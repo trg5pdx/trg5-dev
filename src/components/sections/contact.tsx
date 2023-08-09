@@ -4,6 +4,8 @@ import { send } from "@emailjs/browser";
 import Link from "next/link";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import Button from "../button";
+import { Input, TextBox } from "../input";
 import { notifData, EmailStatus } from "../../constants/constants";
 
 const Contact = (props: {
@@ -51,7 +53,7 @@ const Contact = (props: {
         );
       });
   };
-  
+
   // Changed the classes in here from the home classes to inline so the theme toggle works
   return (
     <section className={styles.section} id="contact">
@@ -60,8 +62,12 @@ const Contact = (props: {
     text-purple-800 dark:bg-neutral-800 dark:text-purple-300`}
       >
         Contact Me
-    </h2>
-      <div className={'mx-2 rounded bg-neutral-300 p-6 text-lg dark:bg-neutral-800'}>
+      </h2>
+      <div
+        className={
+          "mx-2 rounded bg-neutral-300 p-6 text-lg dark:bg-neutral-800"
+        }
+      >
         {`Want to get in contact with me? 
           Fill out the form below and I'll respond to you!`}
         <br />
@@ -71,57 +77,35 @@ const Contact = (props: {
           className="justify-between lg:grid lg:grid-cols-2"
         >
           <div className="my-2 lg:mr-2">
-            <label htmlFor="name" className="hidden">
-              Name:
-            </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
+            <Input
+              id={"name"}
               value={name}
-              placeholder="Name"
-              required={true}
-              className={styles.textbox}
-              onChange={(e) => setName(e.target.value)}
+              setText={(s: string) => setName(s)}
             />
           </div>
           <div className="my-2 lg:ml-2">
-            <label htmlFor="email" className="hidden">
-              Email:
-            </label>
-            <input
-              type="text"
-              name="email"
-              id="email"
+            <Input
+              id={"email"}
               value={email}
-              placeholder="Email"
-              required={true}
-              className={styles.textbox}
-              onChange={(e) => setEmail(e.target.value)}
+              setText={(s: string) => setEmail(s)}
             />
           </div>
           <div className="col-span-2 my-2">
-            <label htmlFor="message" className="hidden">
-              Message:
-            </label>
-            <textarea
-              name="message"
+            <TextBox
               id="message"
               value={message}
+              placeholder="Enter your message here..."
               cols={20}
               rows={5}
-              placeholder="Enter your message here..."
-              required={true}
-              className={styles.textbox}
-              onChange={(e) => setMessage(e.target.value)}
+              setText={(s: string) => setMessage(s)}
             />
             <br />
             <br />
           </div>
           <div className="col-span-2 lg:col-span-1 lg:mr-2">
-            <button type="submit" className={styles.contact_button}>
+            <Button variant="contact" type="submit">
               Submit
-            </button>
+            </Button>
           </div>
         </form>
         <br />
@@ -129,24 +113,24 @@ const Contact = (props: {
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="lg:mr-2 my-2 lg:my-0">
             <Link href="https://github.com/trg5pdx/">
-              <button className={styles.contact_button}>
+              <Button variant="contact">
                 <GitHubIcon />
                 Github
-              </button>
+              </Button>
             </Link>
           </div>
           <div className="lg:ml-2 my-2 lg:my-0">
             <Link href="https://www.linkedin.com/in/trg5/">
-              <button className={styles.contact_button}>
+              <Button variant="contact">
                 <LinkedInIcon />
                 LinkedIn
-              </button>
+              </Button>
             </Link>
           </div>
           <div className="lg:mr-2 my-2">
-            <button
-              className={styles.contact_button}
-              onClick={() => {
+            <Button
+              variant="contact"
+              clickFn={() => {
                 props.setNotifState(
                   new notifData(
                     EmailStatus.Success,
@@ -157,7 +141,7 @@ const Contact = (props: {
               }}
             >
               testing
-            </button>
+            </Button>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 .main {
-  @apply mx-2 h-full w-[96%] grid grid-cols-6 justify-items-center scroll-smooth lg:mx-10;
+  @apply mx-2 h-full w-[96%] grid grid-cols-6 justify-items-center 
+    scroll-smooth lg:mx-10;
 }
 
 .section {
@@ -12,19 +13,8 @@
 }
 
 .section_body {
-  @apply mx-2 rounded bg-neutral-300 p-6 text-lg dark:bg-neutral-800;
-}
-
-.card_desc {
-  @apply h-5/6 text-lg overflow-hidden text-ellipsis bg-clip-text text-transparent
-    bg-gradient-to-b from-black dark:from-white;
-}
-
-/* Come back to this, I think this is messy and could be done better */
-.proj_button {
-  @apply w-fit h-12 bg-purple-600 text-white mr-6 rounded p-2 border-purple-600 border-2
-    hover:bg-slate-200 hover:text-purple-600 dark:hover:bg-pink-500 dark:hover:text-white 
-    dark:hover:border-pink-500 transition-all duration-500;
+  @apply mx-2 rounded bg-neutral-300 p-6 text-lg dark:bg-neutral-800 text-black
+    dark:text-white;
 }
 
 .list_format {
@@ -33,24 +23,4 @@
 
 .list_style {
   @apply list-inside list-disc;
-}
-
-.textbox {
-  @apply w-full rounded-md border-[2px] border-neutral-300 bg-neutral-100 px-2
-  text-black placeholder:text-slate-600 dark:border-neutral-700 dark:bg-neutral-900 
-  dark:text-white dark:placeholder:text-slate-300;
-}
-
-.contact_button {
-  @apply h-14 w-full rounded bg-purple-950 font-bold text-white text-xl 
-  hover:bg-slate-200 hover:border-2 hover:border-purple-950 hover:text-purple-950
-  dark:bg-purple-400 dark:text-black dark:hover:bg-neutral-800 
-  dark:hover:border-pink-300 dark:hover:text-pink-300 hover:transition-all 
-  hover:duration-300;
-}
-
-@media (prefers-color-scheme: dark) {
-  .card_desc {
-    background-image: linear-gradient(to bottom, white 50%, transparent);
-  }
 }

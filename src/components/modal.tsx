@@ -1,10 +1,11 @@
-import styles from '@/styles/Home.module.css';
-import { useState, useEffect, forwardRef, SetStateAction } from 'react';
-import Link from 'next/link';
-import { data } from '../data/data';
-import { Backdrop, Box, Button, Fade, Modal } from '@mui/material';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LanguageIcon from '@mui/icons-material/Language';
+import styles from "@/styles/Home.module.css";
+import { useState, useEffect, forwardRef, SetStateAction } from "react";
+import Link from "next/link";
+import { data } from "../data/data";
+import { Backdrop, Box, Fade, Modal } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LanguageIcon from "@mui/icons-material/Language";
+import Button from "./button";
 
 const ProjectModal = ({
   modal,
@@ -23,12 +24,12 @@ const ProjectModal = ({
     link: https://medium.com/react-camp/how-to-fight-the-body-scroll-2b00267b37ac
   */
   useEffect(() => {
-    const main = document.querySelector('html');
+    const main = document.querySelector("html");
     if (main) {
       if (modal) {
-        main.style.overflow = 'hidden';
+        main.style.overflow = "hidden";
       } else {
-        main.style.overflow = 'unset';
+        main.style.overflow = "unset";
       }
     }
   }, [modal]);
@@ -49,23 +50,16 @@ const ProjectModal = ({
       <Fade in={modal}>
         <Box
           className={
-            'absolute left-1/2 top-1/2 z-50 h-5/6 w-full translate-x-[-50%] ' +
-            'translate-y-[-50%] rounded-xl border-solid border-gray-400 ' +
-            'bg-gray-300 p-8 dark:bg-neutral-900 lg:h-auto lg:min-h-fit lg:max-w-[900px] '
+            "absolute left-1/2 top-1/2 z-50 h-5/6 w-full translate-x-[-50%] " +
+            "translate-y-[-50%] rounded-xl border-solid border-gray-400 " +
+            "bg-gray-300 p-8 dark:bg-neutral-900 lg:h-auto lg:min-h-fit lg:max-w-[900px] "
           }
         >
-          <header className="grid grid-cols-2">
-            <h2 className="justify-self-start text-2xl font-bold">
-              {projData.title}
-            </h2>
-            <button
-              className={styles.proj_button + ' justify-self-end'}
-              onClick={() => {
-                modalState(false);
-              }}
-            >
+          <header className="flex justify-between">
+            <h2 className="text-2xl font-bold">{projData.title}</h2>
+            <Button variant="modal" clickFn={() => modalState(false)}>
               Close
-            </button>
+            </Button>
           </header>
           <br />
           <main className="h-5/6 overflow-scroll text-lg lg:hax-h-[600px] lg:px-4 px-1">
@@ -76,20 +70,20 @@ const ProjectModal = ({
                 <br />
               </section>
             ))}
-            {projData.repo != '' && (
+            {projData.repo != "" && (
               <Link href={projData.repo}>
-                <button className={styles.proj_button}>
+                <Button variant="modal">
                   <GitHubIcon />
                   Source Code
-                </button>
+                </Button>
               </Link>
             )}
             {projData.other && (
               <Link href={projData.other}>
-                <button className={styles.proj_button}>
+                <Button variant="modal">
                   <LanguageIcon />
                   {projData.otherTitle}
-                </button>
+                </Button>
               </Link>
             )}
           </main>

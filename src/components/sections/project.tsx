@@ -17,20 +17,6 @@ const Project = () => {
   const [projModal, toggleModal] = useState(false);
   const [projIndex, projIndexState] = useState(0);
 
-  const project_list = data.projects.map((projData, index) => (
-    <SwiperSlide tag="li" key={index}>
-      <Card
-        title={projData.title}
-        desc={projData.desc}
-        index={index}
-        openModal={(arg0: number) => {
-          projIndexState(arg0);
-          toggleModal(true);
-        }}
-      />
-    </SwiperSlide>
-  ));
-
   // Changed the classes in here from the home classes to inline so the theme toggle works
   return (
     <section className={styles.section} id="projects">
@@ -40,7 +26,7 @@ const Project = () => {
       >
         {"Projects I've worked on"}
       </h2>
-      <div className=" mx-2 p-6 text-lg rounded bg-neutral-300 dark:bg-neutral-800">
+      <div className=" mx-2 p-6 text-lg rounded bg-neutral-300 dark:bg-neutral-800 text-black dark:text-white">
         <ProjectModal
           modal={projModal}
           modalState={(val: boolean) => toggleModal(val)}
@@ -63,7 +49,19 @@ const Project = () => {
             },
           }}
         >
-          {project_list}
+          {data.projects.map((projData, index) => (
+            <SwiperSlide tag="li" key={index}>
+              <Card
+                title={projData.title}
+                desc={projData.desc}
+                index={index}
+                openModal={(arg0: number) => {
+                  projIndexState(arg0);
+                  toggleModal(true);
+                }}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </section>

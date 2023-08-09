@@ -1,4 +1,4 @@
-// @format
+import Button from "./button";
 
 const Card = (props: {
   title: string;
@@ -18,18 +18,13 @@ const Card = (props: {
       </h2>
       <p
         className={`h-2/3 text-lg overflow-hidden text-ellipsis bg-clip-text 
-        text-transparent bg-gradient-to-b from-black dark:from-white;`}
+        text-transparent fade-text dark:fade-text`}
       >
         {props.desc}
       </p>
-      <button
-        className="font-bold"
-        onClick={() => {
-          props.openModal(props.index);
-        }}
-      >
+      <Button variant={"modal"} clickFn={() => props.openModal(props.index)}>
         Learn More
-      </button>
+      </Button>
     </div>
   );
 };
