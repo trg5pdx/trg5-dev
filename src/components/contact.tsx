@@ -4,9 +4,9 @@ import { send } from "@emailjs/browser";
 import Link from "next/link";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import Button from "../button";
-import { Input, TextBox } from "../input";
-import { notifData, EmailStatus } from "../../constants/constants";
+import Button from "./button";
+import { Input, TextBox } from "./input";
+import { notifData, EmailStatus } from "../constants/constants";
 
 const Contact = (props: {
   notifState: notifData;

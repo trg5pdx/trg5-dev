@@ -18,7 +18,7 @@ const Card = (props: {
         className={`h-[65%] text-lg overflow-hidden text-ellipsis bg-clip-text 
         text-transparent fade-text dark:fade-text`}
       >
-        {props.desc}
+        {props.desc[0]}
       </p>
       <Button variant={"modal"} clickFn={() => props.openModal(props.index)}>
         Learn More

@@ -6,6 +6,13 @@ export enum EmailStatus {
   None,
 }
 
+export enum ButtonType {
+  "button",
+  "submit",
+  "reset",
+  undefined,
+}
+
 export class ProjectData {
   title: String;
   desc: String;
@@ -36,8 +43,8 @@ export class ProjectData {
       this.other = other;
       this.other_title = other_title;
     } else {
-      this.other = '';
-      this.other_title = '';
+      this.other = "";
+      this.other_title = "";
     }
   }
 }

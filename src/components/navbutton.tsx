@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ReactNode } from "react";
 import Link from "next/link";
 
 const NavButton = (props: {

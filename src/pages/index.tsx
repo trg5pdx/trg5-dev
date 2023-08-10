@@ -1,10 +1,10 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import Navbar from "../components/navbar";
-import Intro from "../components/sections/intro";
+import Intro from "../components/intro";
 import Section from "../components/section";
-import Project from "../components/sections/project";
-import Contact from "../components/sections/contact";
+import Project from "../components/project";
+import Contact from "../components/contact";
 import Notification from "../components/notification";
 import Footer from "../components/footer";
 import { notifData, EmailStatus } from "../constants/constants";

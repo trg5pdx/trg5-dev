@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 const Button = (props: {
   variant: string;
-  type?: string;
+  type?: "button" | "submit" | "reset" | undefined;
   clickFn?: () => void;
   children: ReactNode;
 }) => {
@@ -24,7 +24,6 @@ const Button = (props: {
     }
   };
   const currentStyle = getClasses(props.variant);
-  const buttonType = props.type ? props.type : "button";
 
   const click = () => {
     if (props.clickFn) {
@@ -33,7 +32,7 @@ const Button = (props: {
   };
 
   return (
-    <button type={buttonType} className={currentStyle} onClick={() => click()}>
+    <button type={props.type} className={currentStyle} onClick={() => click()}>
       {props.children}
     </button>
   );

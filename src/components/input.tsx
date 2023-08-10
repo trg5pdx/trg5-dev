@@ -2,7 +2,7 @@
  * https://masteringjs.io/tutorials/fundamentals/capitalize-first-letter
  * */
 
-const boxStyle = `w-full rounded-md border-[1px] border-neutral-300 
+const boxStyle = `w-full rounded-md border-[1px] border-neutral-400 
   bg-neutral-100 px-2 text-black placeholder:text-slate-600 
   dark:border-neutral-700 dark:bg-neutral-900 dark:text-white 
   dark:placeholder:text-slate-300`;

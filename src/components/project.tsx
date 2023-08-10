@@ -1,7 +1,7 @@
 import styles from "@/styles/Home.module.css";
-import { data } from "../../data/data";
-import ProjectModal from "../modal";
-import Card from "../card";
+import { data } from "../data/data";
+import ProjectModal from "./modal";
+import Card from "./card";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
