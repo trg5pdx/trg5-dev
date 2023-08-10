@@ -9,6 +9,8 @@ import Notification from "../components/notification";
 import Footer from "../components/footer";
 import { notifData, EmailStatus } from "../constants/constants";
 import { useState } from "react";
+import { data } from "../data/data";
+import { gen_list, format_about } from "../utils/utils";
 
 export default function Home() {
   const [notifState, setNotifState] = useState(
@@ -28,12 +30,24 @@ export default function Home() {
       <Navbar />
       <main className={styles.main}>
         <Intro />
-        <Section anchor="about" title="About Me" />
-        <Section anchor="skills" title="Skills" />
-        <Section anchor="school" title="Education" />
-        <Section anchor="work" title="Work History" />
-        <Project />
-        <Contact notifState={notifState} setNotifState={changeNotif} />
+        <Section anchor="about" title="About Me">
+          {format_about(data.about)}
+        </Section>
+        <Section anchor="skills" title="Skills">
+          {gen_list(data.skills)}
+        </Section>
+        <Section anchor="school" title="Education">
+          {gen_list(data.school)}
+        </Section>
+        <Section anchor="work" title="Work History">
+          {gen_list(data.work)}
+        </Section>
+        <Section anchor="project" title="Projects Ive worked on">
+          <Project />
+        </Section>
+        <Section anchor="contact" title="Contact me">
+          <Contact notifState={notifState} setNotifState={changeNotif} />
+        </Section>
         <Notification
           status={notifState.status}
           message={notifState.message}

@@ -14,17 +14,17 @@ import { useTheme } from "next-themes";
 
 const NavBar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
-  /* got the theme toggle code from:
-   * https://dev.to/chinmaymhatre/implementing-dark-mode-in-nextjs-with-tailwind-css-and-next-themes-a4e
-   * */
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
+  const closeNav = () => setNavbarOpen(false);
 
   return (
     <nav className="sticky top-0 z-20 grid grid-cols-8 py-2 bg-neutral-200 dark:bg-neutral-800">
-      <div className="col-span-7 lg:grid lg:grid-cols-7 flex flex-col lg:flex-row flex-wrap justify-items-center">
+      <div className="col-span-5 lg:col-span-7 lg:grid lg:grid-cols-7 flex flex-col lg:flex-row flex-wrap justify-items-center">
         <button
-          className="mx-4 cursor-pointer text-left text-xl leading-none lg:invisible"
+          className={`mx-4 cursor-pointer text-left text-xl leading-none 
+          lg:invisible font-bold text-purple-800 dark:text-purple-300
+          hover:text-pink-500 dark:hover:text-pink-300`}
           type="button"
           onClick={() => setNavbarOpen(!navbarOpen)}
         >
@@ -38,30 +38,40 @@ const NavBar = () => {
             (navbarOpen ? " flex justify-between" : " hidden")
           }
         >
-          <NavButton path="/" title="Home" navState={setNavbarOpen} />
-          <NavButton path="/#about" title="About" navState={setNavbarOpen} />
-          <NavButton path="/#skills" title="Skills" navState={setNavbarOpen} />
-          <NavButton path="/#school" title="School" navState={setNavbarOpen} />
-          <NavButton path="/#work" title="Work" navState={setNavbarOpen} />
-          <NavButton
-            path="/#projects"
-            title="Projects"
-            navState={setNavbarOpen}
-          />
-          <NavButton
-            path="/#contact"
-            title="Contact"
-            navState={setNavbarOpen}
-          />
+          <NavButton path="/" clickFn={closeNav}>
+            Home
+          </NavButton>
+          <NavButton path="/#about" clickFn={closeNav}>
+            About
+          </NavButton>
+          <NavButton path="/#skills" clickFn={closeNav}>
+            Skills
+          </NavButton>
+          <NavButton path="/#school" clickFn={closeNav}>
+            School
+          </NavButton>
+          <NavButton path="/#work" clickFn={closeNav}>
+            Work
+          </NavButton>
+          <NavButton path="/#projects" clickFn={closeNav}>
+            Projects
+          </NavButton>
+          <NavButton path="/#contact" clickFn={closeNav}>
+            Contact
+          </NavButton>
         </ul>
       </div>
       <button
-        className={`rounded-xl px-4 py-1 text-xl font-bold text-purple-800
-         dark:text-purple-300 hover:text-pink-500 dark:hover:text-pink-300`}
+        className={
+          `col-span-3 lg:col-span-1 px-4 py-1 text-xl font-bold 
+        text-purple-800 dark:text-purple-300 hover:text-pink-500 
+        dark:hover:text-pink-300 justify-self-end lg:justify-self-center` +
+          (navbarOpen ? " self-start" : "self-center")
+        }
         onClick={() => (theme == "dark" ? setTheme("light") : setTheme("dark"))}
       >
         {currentTheme == "light" ? <DarkModeIcon /> : <LightModeIcon />}
-        Toggle Theme
+        Theme
       </button>
     </nav>
   );

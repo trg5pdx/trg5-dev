@@ -9,10 +9,10 @@ const Button = (props: {
   const getClasses = (variant: string) => {
     switch (variant) {
       case "modal":
-        return `w-fit h-12 bg-purple-600 text-white mr-6 rounded p-2
-        border-purple-700 border-2 hover:bg-slate-200 hover:text-purple-600
+        return `w-fit h-12 bg-purple-600 text-white text-bold text-lg mr-6 p-2
+        border-purple-600 border-2 hover:bg-slate-200 hover:text-purple-600
         dark:hover:bg-pink-500 dark:hover:text-white dark:hover:border-pink-500
-        transition-all duration-500`;
+        rounded-lg transition-all duration-500`;
       case "contact":
         return `h-14 w-full rounded bg-purple-950 font-bold text-white text-xl
         hover:bg-slate-200 hover:border-2 hover:border-purple-950 

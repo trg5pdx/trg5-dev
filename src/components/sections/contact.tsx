@@ -56,96 +56,64 @@ const Contact = (props: {
 
   // Changed the classes in here from the home classes to inline so the theme toggle works
   return (
-    <section className={styles.section} id="contact">
-      <h2
-        className={`mx-2 my-3 w-fit rounded p-2 text-3xl font-bold bg-neutral-300 
-    text-purple-800 dark:bg-neutral-800 dark:text-purple-300`}
-      >
-        Contact Me
-      </h2>
-      <div
-        className={
-          "mx-2 rounded bg-neutral-300 p-6 text-lg dark:bg-neutral-800"
-        }
-      >
-        {`Want to get in contact with me? 
+    <div className={"mx-2 rounded bg-neutral-300 text-lg dark:bg-neutral-800"}>
+      {`Want to get in contact with me? 
           Fill out the form below and I'll respond to you!`}
-        <br />
-        <br />
-        <form
-          onSubmit={handleSubmit}
-          className="justify-between lg:grid lg:grid-cols-2"
-        >
-          <div className="my-2 lg:mr-2">
-            <Input
-              id={"name"}
-              value={name}
-              setText={(s: string) => setName(s)}
-            />
-          </div>
-          <div className="my-2 lg:ml-2">
-            <Input
-              id={"email"}
-              value={email}
-              setText={(s: string) => setEmail(s)}
-            />
-          </div>
-          <div className="col-span-2 my-2">
-            <TextBox
-              id="message"
-              value={message}
-              placeholder="Enter your message here..."
-              cols={20}
-              rows={5}
-              setText={(s: string) => setMessage(s)}
-            />
-            <br />
-            <br />
-          </div>
-          <div className="col-span-2 lg:col-span-1 lg:mr-2">
-            <Button variant="contact" type="submit">
-              Submit
+      <br />
+      <br />
+      <form
+        onSubmit={handleSubmit}
+        className="justify-between lg:grid lg:grid-cols-2"
+      >
+        <div className="my-2 lg:mr-2">
+          <Input id={"name"} value={name} setText={(s: string) => setName(s)} />
+        </div>
+        <div className="my-2 lg:ml-2">
+          <Input
+            id={"email"}
+            value={email}
+            setText={(s: string) => setEmail(s)}
+          />
+        </div>
+        <div className="col-span-2 my-2">
+          <TextBox
+            id="message"
+            value={message}
+            placeholder="Enter your message here..."
+            cols={20}
+            rows={5}
+            setText={(s: string) => setMessage(s)}
+          />
+          <br />
+          <br />
+        </div>
+        <div className="col-span-2 lg:col-span-1 lg:mr-2">
+          <Button variant="contact" type="submit">
+            Submit
+          </Button>
+        </div>
+      </form>
+      <br />
+      {`You can also find me on Github and LinkedIn!`}
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="lg:mr-2 my-2 lg:my-0">
+          <Link href="https://github.com/trg5pdx/">
+            <Button variant="contact">
+              <GitHubIcon />
+              Github
             </Button>
-          </div>
-        </form>
-        <br />
-        {`You can also find me on Github and LinkedIn!`}
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="lg:mr-2 my-2 lg:my-0">
-            <Link href="https://github.com/trg5pdx/">
-              <Button variant="contact">
-                <GitHubIcon />
-                Github
-              </Button>
-            </Link>
-          </div>
-          <div className="lg:ml-2 my-2 lg:my-0">
-            <Link href="https://www.linkedin.com/in/trg5/">
-              <Button variant="contact">
-                <LinkedInIcon />
-                LinkedIn
-              </Button>
-            </Link>
-          </div>
-          <div className="lg:mr-2 my-2">
-            <Button
-              variant="contact"
-              clickFn={() => {
-                props.setNotifState(
-                  new notifData(
-                    EmailStatus.Success,
-                    "test",
-                    !props.notifState.isOpen
-                  )
-                );
-              }}
-            >
-              testing
+          </Link>
+        </div>
+        <div className="lg:ml-2 my-2 lg:my-0">
+          <Link href="https://www.linkedin.com/in/trg5/">
+            <Button variant="contact">
+              <LinkedInIcon />
+              LinkedIn
             </Button>
-          </div>
+          </Link>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -19,52 +19,44 @@ const Project = () => {
 
   // Changed the classes in here from the home classes to inline so the theme toggle works
   return (
-    <section className={styles.section} id="projects">
-      <h2
-        className={`mx-2 my-3 w-fit rounded p-2 text-3xl font-bold bg-neutral-300 
-    text-purple-800 dark:bg-neutral-800 dark:text-purple-300`}
+    <div className="mx-2 text-lg rounded bg-neutral-300 dark:bg-neutral-800 text-black dark:text-white">
+      <ProjectModal
+        modal={projModal}
+        modalState={(val: boolean) => toggleModal(val)}
+        projIndex={projIndex}
+      />
+      <Swiper
+        slidesPerView={1}
+        centeredSlides={true}
+        spaceBetween={10}
+        modules={[]}
+        wrapperTag="ul"
+        breakpoints={{
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        }}
       >
-        {"Projects I've worked on"}
-      </h2>
-      <div className=" mx-2 p-6 text-lg rounded bg-neutral-300 dark:bg-neutral-800 text-black dark:text-white">
-        <ProjectModal
-          modal={projModal}
-          modalState={(val: boolean) => toggleModal(val)}
-          projIndex={projIndex}
-        />
-        <Swiper
-          slidesPerView={1}
-          centeredSlides={true}
-          spaceBetween={10}
-          modules={[]}
-          wrapperTag="ul"
-          breakpoints={{
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
-          }}
-        >
-          {data.projects.map((projData, index) => (
-            <SwiperSlide tag="li" key={index}>
-              <Card
-                title={projData.title}
-                desc={projData.desc}
-                index={index}
-                openModal={(arg0: number) => {
-                  projIndexState(arg0);
-                  toggleModal(true);
-                }}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </section>
+        {data.projects.map((projData, index) => (
+          <SwiperSlide tag="li" key={index}>
+            <Card
+              title={projData.title}
+              desc={projData.desc}
+              index={index}
+              openModal={(arg0: number) => {
+                projIndexState(arg0);
+                toggleModal(true);
+              }}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };
 

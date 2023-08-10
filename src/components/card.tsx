@@ -8,16 +8,14 @@ const Card = (props: {
 }) => {
   return (
     <div
-      className={
-        "mx-2 bg-neutral-100 text-neutral-900 dark:bg-neutral-900" +
-        " dark:text-white rounded-xl h-64 p-4"
-      }
+      className={`mx-2 bg-neutral-100 text-neutral-900 dark:bg-neutral-900 
+      dark:text-white rounded-xl h-80 p-4`}
     >
-      <h2 className="justify-self-start text-xl font-bold my-1">
+      <h2 className="justify-self-start text-xl font-bold my-2">
         {props.title}
       </h2>
       <p
-        className={`h-2/3 text-lg overflow-hidden text-ellipsis bg-clip-text 
+        className={`h-[65%] text-lg overflow-hidden text-ellipsis bg-clip-text 
         text-transparent fade-text dark:fade-text`}
       >
         {props.desc}
