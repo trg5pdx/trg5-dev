@@ -1,9 +1,8 @@
-import styles from '@/styles/Home.module.css';
 import Link from 'next/link';
 
 const footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer className="my-10 text-center text-gray-900 dark:text-gray-400">
       Made by Thomas Gardner, 2023
       <br />
       Developed using NextJS and React

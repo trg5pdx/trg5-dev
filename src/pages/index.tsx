@@ -1,16 +1,24 @@
-import Head from 'next/head';
-import styles from '@/styles/Home.module.css';
-import Navbar from '../components/navbar';
-import Intro from '../components/sections/intro';
-import About from '../components/sections/about';
-import Skills from '../components/sections/skills';
-import School from '../components/sections/school';
-import Work from '../components/sections/work';
-import Project from '../components/sections/project';
-import Contact from '../components/sections/contact';
-import Footer from '../components/footer';
+import Head from "next/head";
+import styles from "@/styles/Home.module.css";
+import Navbar from "../components/navbar";
+import Intro from "../components/intro";
+import Section from "../components/section";
+import Project from "../components/project";
+import Contact from "../components/contact";
+import Notification from "../components/notification";
+import Footer from "../components/footer";
+import { notifData, EmailStatus } from "../constants/constants";
+import { useState } from "react";
+import { data } from "../data/data";
+import { gen_list, format_about } from "../utils/utils";
 
 export default function Home() {
+  const [notifState, setNotifState] = useState(
+    new notifData(EmailStatus.None, "", false)
+  );
+
+  const changeNotif = (newState: notifData) => setNotifState(newState);
+
   return (
     <>
       <Head>
@@ -22,12 +30,30 @@ export default function Home() {
       <Navbar />
       <main className={styles.main}>
         <Intro />
-        <About />
-        <Skills />
-        <School />
-        <Work />
-        <Project />
-        <Contact />
+        <Section anchor="about" title="About Me">
+          {format_about(data.about)}
+        </Section>
+        <Section anchor="skills" title="Skills">
+          {gen_list(data.skills)}
+        </Section>
+        <Section anchor="school" title="Education">
+          {gen_list(data.school)}
+        </Section>
+        <Section anchor="work" title="Work History">
+          {gen_list(data.work)}
+        </Section>
+        <Section anchor="project" title="Projects Ive worked on">
+          <Project />
+        </Section>
+        <Section anchor="contact" title="Contact me">
+          <Contact notifState={notifState} setNotifState={changeNotif} />
+        </Section>
+        <Notification
+          status={notifState.status}
+          message={notifState.message}
+          isOpen={notifState.isOpen}
+          changeNotif={changeNotif}
+        />
       </main>
       <Footer />
     </>

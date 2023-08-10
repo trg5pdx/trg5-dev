@@ -1,17 +1,30 @@
-import styles from '@/styles/Home.module.css';
-import { useState } from 'react';
-import Link from 'next/link';
-import MenuIcon from '@mui/icons-material/Menu';
-import { Menu } from '@mui/material';
+import { useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import NavButton from "./navbutton";
+import { useTheme } from "next-themes";
 
-const Navbar = () => {
+/*
+ * Currently theres a bug with react where it will print an error containing
+ * the phrase "prop 'd' did not match", seems to be occuring on MUI's icons,
+ * but seems to be a general react bug given the bug report below
+ * https://github.com/facebook/react/issues/15187
+ * */
+
+const NavBar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const { systemTheme, theme, setTheme } = useTheme();
+  const currentTheme = theme === "system" ? systemTheme : theme;
+  const closeNav = () => setNavbarOpen(false);
 
   return (
-    <>
-      <nav className={styles.navbar}>
+    <nav className="sticky top-0 z-20 grid grid-cols-8 py-2 bg-neutral-200 dark:bg-neutral-800">
+      <div className="col-span-5 lg:col-span-7 lg:grid lg:grid-cols-7 flex flex-col lg:flex-row flex-wrap justify-items-center">
         <button
-          className="mx-4 cursor-pointer text-left text-xl leading-none lg:hidden"
+          className={`mx-4 cursor-pointer text-left text-xl leading-none 
+          lg:invisible font-bold text-purple-800 dark:text-purple-300
+          hover:text-pink-500 dark:hover:text-pink-300`}
           type="button"
           onClick={() => setNavbarOpen(!navbarOpen)}
         >
@@ -20,77 +33,48 @@ const Navbar = () => {
         </button>
         <ul
           className={
-            styles.nav_container +
-            (navbarOpen ? ' flex justify-between' : ' hidden')
+            "flex-grow list-none flex-col flex-wrap col-span-6" +
+            " lg:flex lg:flex-row lg:justify-center" +
+            (navbarOpen ? " flex justify-between" : " hidden")
           }
         >
-          <li className={styles.navbar_button_container}>
-            <Link
-              href="/"
-              className={styles.navbar_button}
-              onClick={() => setNavbarOpen(!navbarOpen)}
-            >
-              Home
-            </Link>
-          </li>
-          <li className={styles.navbar_button_container}>
-            <Link
-              href="/#about"
-              className={styles.navbar_button}
-              onClick={() => setNavbarOpen(!navbarOpen)}
-            >
-              About
-            </Link>
-          </li>
-          <li className={styles.navbar_button_container}>
-            <Link
-              href="/#skills"
-              className={styles.navbar_button}
-              onClick={() => setNavbarOpen(!navbarOpen)}
-            >
-              Skills
-            </Link>
-          </li>
-          <li className={styles.navbar_button_container}>
-            <Link
-              href="/#school"
-              className={styles.navbar_button}
-              onClick={() => setNavbarOpen(!navbarOpen)}
-            >
-              School
-            </Link>
-          </li>
-          <li className={styles.navbar_button_container}>
-            <Link
-              href="/#work"
-              className={styles.navbar_button}
-              onClick={() => setNavbarOpen(!navbarOpen)}
-            >
-              Work
-            </Link>
-          </li>
-          <li className={styles.navbar_button_container}>
-            <Link
-              href="/#projects"
-              className={styles.navbar_button}
-              onClick={() => setNavbarOpen(!navbarOpen)}
-            >
-              Projects
-            </Link>
-          </li>
-          <li className={styles.navbar_button_container}>
-            <Link
-              href="/#contact"
-              className={styles.navbar_button}
-              onClick={() => setNavbarOpen(!navbarOpen)}
-            >
-              Contact
-            </Link>
-          </li>
+          <NavButton path="/" clickFn={closeNav}>
+            Home
+          </NavButton>
+          <NavButton path="/#about" clickFn={closeNav}>
+            About
+          </NavButton>
+          <NavButton path="/#skills" clickFn={closeNav}>
+            Skills
+          </NavButton>
+          <NavButton path="/#school" clickFn={closeNav}>
+            School
+          </NavButton>
+          <NavButton path="/#work" clickFn={closeNav}>
+            Work
+          </NavButton>
+          <NavButton path="/#projects" clickFn={closeNav}>
+            Projects
+          </NavButton>
+          <NavButton path="/#contact" clickFn={closeNav}>
+            Contact
+          </NavButton>
         </ul>
-      </nav>
-    </>
+      </div>
+      <button
+        className={
+          `col-span-3 lg:col-span-1 px-4 py-1 text-xl font-bold 
+        text-purple-800 dark:text-purple-300 hover:text-pink-500 
+        dark:hover:text-pink-300 justify-self-end lg:justify-self-center` +
+          (navbarOpen ? " self-start" : "self-center")
+        }
+        onClick={() => (theme == "dark" ? setTheme("light") : setTheme("dark"))}
+      >
+        {currentTheme == "light" ? <DarkModeIcon /> : <LightModeIcon />}
+        Theme
+      </button>
+    </nav>
   );
 };
 
-export default Navbar;
+export default NavBar;

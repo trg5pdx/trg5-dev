@@ -162,6 +162,16 @@ export const data = {
           of new skills while working on it.
         `,
       ],
+      links: [
+        {
+          title: 'Source Code',
+          link: 'https://github.com/pdx-blurp/blurp-frontend',
+        },
+        {
+          title: 'Live Webapp',
+          link: 'https://blurp-pdx.netlify.app/',
+        },
+      ],
       repo: 'https://github.com/pdx-blurp/blurp-frontend',
       otherTitle: 'Blurp webapp',
       other: 'https://blurp-pdx.netlify.app/',
