@@ -1,5 +1,5 @@
 .main {
-  @apply mx-2 h-full w-[96%] grid grid-cols-6 justify-items-center 
+  @apply h-full w-full lg:w-[96%] grid grid-cols-6 justify-items-center 
     scroll-smooth lg:mx-10;
 }
 

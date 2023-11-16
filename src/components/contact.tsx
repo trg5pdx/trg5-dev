@@ -56,7 +56,7 @@ const Contact = (props: {
 
   // Changed the classes in here from the home classes to inline so the theme toggle works
   return (
-    <div className={"mx-2 rounded bg-neutral-300 text-lg dark:bg-neutral-800"}>
+    <div className={"rounded bg-neutral-300 text-lg dark:bg-neutral-800"}>
       {`Want to get in contact with me? 
           Fill out the form below and I'll respond to you!`}
       <br />
