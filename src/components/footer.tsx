@@ -1,16 +1,16 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 const footer = () => {
   return (
     <footer className="my-10 text-center text-gray-900 dark:text-gray-400">
-      Made by Thomas Gardner, 2023
+      Made by Thomas Gardner, 2024
       <br />
       Developed using NextJS and React
       <br />
-      {'Resources used: '}
+      {"Resources used: "}
       <Link href="/citations">citations</Link>
       <br />
-      {'Source code for this website: '}
+      {"Source code for this website: "}
       <Link href="https://github.com/trg5pdx/trg5-dev">Github</Link>
     </footer>
   );
