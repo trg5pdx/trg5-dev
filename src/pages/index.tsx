@@ -1,20 +1,20 @@
-import Head from "next/head";
-import styles from "@/styles/Home.module.css";
-import Navbar from "../components/navbar";
-import Intro from "../components/intro";
-import Section from "../components/section";
-import Project from "../components/project";
-import Contact from "../components/contact";
-import Notification from "../components/notification";
-import Footer from "../components/footer";
-import { notifData, EmailStatus } from "../constants/constants";
-import { useState } from "react";
-import { data } from "../data/data";
-import { gen_list, format_about } from "../utils/utils";
+import Head from 'next/head';
+import styles from '@/styles/Home.module.css';
+import Navbar from '../components/navbar';
+import Intro from '../components/intro';
+import Section from '../components/section';
+import Project from '../components/project';
+import Contact from '../components/contact';
+import Notification from '../components/notification';
+import Footer from '../components/footer';
+import { notifData, EmailStatus } from '../constants/constants';
+import { useState } from 'react';
+import { data } from '../data/data';
+import { gen_list, format_about } from '../utils/utils';
 
 export default function Home() {
   const [notifState, setNotifState] = useState(
-    new notifData(EmailStatus.None, "", false)
+    new notifData(EmailStatus.None, '', false)
   );
 
   const changeNotif = (newState: notifData) => setNotifState(newState);
@@ -42,7 +42,7 @@ export default function Home() {
         <Section anchor="work" title="Work History">
           {gen_list(data.work)}
         </Section>
-        <Section anchor="project" title="Projects Ive worked on">
+        <Section anchor="projects" title="Projects Ive worked on">
           <Project />
         </Section>
         <Section anchor="contact" title="Contact me">
